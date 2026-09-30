@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common -->
+    <string name="refresh_desc">正在刷新</string>
+    <string name="month_previous">上个月</string>
+    <string name="month_next">下个月</string>
+    <string name="month_label">%1$d 年 %2$d 月</string>
+    <string name="date_picker_today">今天</string>
+    <string name="date_picker_day_desc">%1$d 日</string>
+
+    <!-- Settings -->
+    <string name="settings_subtitle">面板、提醒、外观和数据</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_desc">默认深色；也可以跟随系统</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_reduce_transparency">降低透明效果</string>
+    <string name="settings_reduce_transparency_desc">玻璃改为几乎不透明、不模糊，文字更清楚，也更省电</string>
+    <string name="settings_background_animation">背景动画</string>
+    <string name="settings_background_animation_desc">背景的色块缓慢流动；关闭后背景静止</string>
+
+    <!-- Detail -->
+    <string name="trend_today_none">今天还没有新的用量记录，下次刷新后更新。点柱子可以查看其他日子。</string>
+    <string name="trend_today_none_last">今天还没有新的用量记录。最近一次是 %1$s，用了 %2$s；点柱子查看其他日子。</string>
+    <string name="liquid_slosh">轻点液面晃一下</string>
+
+    <!-- Komari -->
+    <string name="komari_saving">正在保存…</string>
+    <string name="komari_cleartext_title">明文传输</string>
+    <string name="import_loading">正在读取面板上的节点…</string>
+
+    <!-- About -->
+    <string name="about_title">关于续杯</string>
+    <string name="about_row_desc">版本、开源许可</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_tagline">订阅、到期和 VPS 流量，一眼看清。</string>
+    <string name="about_licenses">开源许可</string>
+    <string name="about_licenses_desc">用到的开源库、拷贝的源码和服务图标</string>
+    <string name="about_licenses_missing">没有找到许可说明文件。</string>
+    <string name="about_personal">仅供个人使用</string>
+    <string name="about_personal_desc">服务图标只用来识别订阅，商标归各自的所有者</string>
+
+    <!-- Statistics -->
+    <string name="stats_subtitle_year">%1$d 年</string>
+    <string name="stats_mode_month">按月</string>
+    <string name="stats_mode_year">按年</string>
+    <string name="stats_currency_label">货币</string>
+    <string name="stats_empty_title">还没有订阅</string>
+    <string name="stats_empty_message">添加订阅后，这里会显示每月花费、分类占比、花费排行和缴费日历。</string>
+    <string name="stats_empty_action">添加订阅</string>
+    <string name="stats_needs_info">%1$d 个订阅还没有价格和到期日，补充后才计入统计。</string>
+    <string name="stats_only_needs_info">%1$d 个订阅都还没有价格和到期日，补充后这里才有图表。</string>
+    <string name="stats_chart_no_subs">添加订阅后显示</string>
+    <string name="stats_chart_needs_info">补充价格和到期日后显示</string>
+    <string name="stats_chart_nothing">%1$s 没有需要付款的订阅</string>
+    <string name="stats_metric_month">本月支出</string>
+    <string name="stats_metric_year">本年支出</string>
+    <string name="stats_metric_previous_month">上月 %1$s</string>
+    <string name="stats_metric_previous_year">去年 %1$s</string>
+    <string name="stats_metric_daily">日均花费</string>
+    <string name="stats_metric_daily_note">按摊销计算</string>
+    <string name="stats_metric_top">最贵的订阅</string>
+    <string name="stats_per_month">%1$s / 月</string>
+    <string name="stats_metric_change_month">比上月</string>
+    <string name="stats_metric_change_year">比去年</string>
+    <string name="stats_metric_same">持平</string>
+    <string name="stats_metric_change_none">上期没有支出</string>
+    <string name="stats_metric_change_percent">变化 %1$s</string>
+    <string name="stats_metric_lifetime">累计已花</string>
+    <string name="stats_metric_lifetime_note">从添加起算，含已归档</string>
+    <string name="stats_metric_active">生效的订阅</string>
+    <string name="stats_metric_active_note">%1$d 个在计费</string>
+    <string name="stats_metric_active_note_incomplete">%1$d 个在计费 · %2$d 个待补充</string>
+    <string name="stats_monthly_future">浅色为未来月份</string>
+    <string name="stats_basis_cash">现金流</string>
+    <string name="stats_basis_amortized">摊销</string>
+    <string name="stats_basis_cash_explain">现金流：扣款实际落在哪个月，就算在哪个月。</string>
+    <string name="stats_basis_amortized_explain">摊销：年付、季付平摊到它覆盖的每个月；一次性购买不计入。</string>
+    <string name="stats_month_short">月</string>
+    <string name="stats_monthly_desc">每月应付：%1$s</string>
+    <string name="stats_tap_bar">点柱子查看当月明细</string>
+    <string name="stats_year_label">按年</string>
+    <string name="stats_year_trailing">点柱子切换年份</string>
+    <string name="stats_year_of">%1$d 年合计</string>
+    <string name="stats_years_desc">各年合计：%1$s</string>
+    <string name="stats_year_months">%1$d 年按月</string>
+    <string name="stats_monthly_average">月均 %1$s</string>
+    <string name="stats_per_month_note">按每月折合金额</string>
+    <string name="stats_ranking_all">查看全部排行</string>
+    <string name="stats_ranking_trailing">折合每月</string>
+    <string name="stats_ranking_more">还有 %1$d 个，点开查看</string>
+    <string name="stats_ranking_desc">花费排行：%1$s</string>
+    <string name="stats_ranking_sheet_sub">%1$d 个订阅，每月合计 %2$s</string>
+    <string name="stats_detail_title">当月明细</string>
+    <string name="stats_detail_month">%1$d 年 %2$d 月</string>
+    <string name="stats_detail_none">这个月没有扣款</string>
+    <string name="stats_detail_count">%1$d 笔</string>
+    <string name="stats_detail_one_time">一次性 · %1$s</string>
+    <string name="stats_detail_one_time_short">一次性购买</string>
+    <string name="stats_detail_spread">%1$s %2$s 分摊 · %3$s 付款</string>
+    <string name="stats_calendar_label">缴费日历</string>
+    <string name="stats_calendar_legend">颜色越深金额越大</string>
+    <string name="stats_calendar_total">%1$d 天有扣款，合计 %2$s</string>
+    <string name="stats_calendar_empty">这个月没有扣款</string>
+    <string name="stats_calendar_desc">%1$d 年 %2$d 月缴费日历，%3$d 天有扣款</string>
+    <string name="stats_calendar_hint">点有颜色的日子，查看当天的付款</string>
+    <string name="stats_calendar_day">%1$s · %2$s</string>
+    <string name="stats_calendar_day_none">%1$s 没有扣款</string>
+    <string name="stats_traffic_label">各台流量</string>
+    <string name="stats_traffic_trailing">按用量比例排序</string>
+    <string name="stats_traffic_no_vps">还没有 VPS。添加 VPS 并关联 Komari 节点后，这里对比各台的流量。</string>
+    <string name="stats_traffic_no_data">VPS 还没有流量数据，关联节点并刷新后显示。</string>
+    <string name="stats_traffic_unlimited">不限流量 · 按已用排序</string>
+    <string name="stats_traffic_desc">各台流量：%1$s</string>
+    <string name="stats_traffic_unlimited_desc">不限流量：%1$s</string>
+    <string name="stats_timeline_count">%1$d 个到期</string>
+    <string name="stats_timeline_total">%1$d 次续费，合计 %2$s</string>
+    <string name="stats_timeline_other_currency">另有 %1$d 笔其他货币</string>
+    <string name="stats_timeline_only_other">%1$d 笔为其他货币，切换货币查看合计</string>
+
+    <!-- 旧版本数据不兼容 -->
+    <string name="legacy_db_title">旧数据已另存</string>
+    <string name="legacy_db_message">检测到旧版本的测试数据，它的结构和当前版本不兼容，无法读取。旧数据已另存为备份（%1$s，保存在 App 的私有目录里，没有删除），现在是空白状态。Komari 面板配置和其他设置都还在。</string>
+    <string name="legacy_db_ok">知道了</string>
+</resources>

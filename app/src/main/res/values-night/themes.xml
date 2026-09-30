@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Before Android 12 the launch window shows the background color and the 续杯 mark. -->
+    <style name="Theme.Vluer" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_legacy</item>
+    </style>
+</resources>

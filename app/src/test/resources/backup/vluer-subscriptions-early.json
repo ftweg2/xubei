@@ -1,0 +1,4 @@
+{"format":"vluer-subscriptions","version":1,"exported_at":"2026-09-20T02:00:00Z","subscriptions":[
+{"name":"Netflix","category":"OTHER","price_minor":6800,"currency":"CNY","cycle_unit":"MONTH","cycle_count":1,"next_due":"2026-10-12","auto_renew":true},
+{"name":"东京 CN2","category":"VPS","price_minor":4990,"currency":"CNY","cycle_unit":"MONTH","cycle_count":1,"next_due":"2026-10-18","vps":{"komari_uuid":"uuid-9","traffic_limit_bytes":536870912000,"reset_day":18}}
+]}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vluer 全部页面布局</title>
+<style>
+:root{--teal:#2dd4bf;--mint:#7ef0dd;--blue:#60a5fa;--violet:#a78bfa;--amber:#fbbf24;--coral:#fb7185;--ink:#eef6f8;--dim:rgba(238,246,248,.64);--faint:rgba(238,246,248,.38)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#04070b;color:var(--ink);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;padding:26px 18px 48px}
+.top{max-width:980px;margin:0 auto 22px;font-size:13px;line-height:1.7;color:var(--dim);text-align:center}
+.gallery{display:flex;flex-wrap:wrap;gap:34px 30px;justify-content:center}
+.col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.cap{font-size:14px;color:var(--ink)}
+.cap small{display:block;font-size:12px;color:var(--dim);margin-top:2px;text-align:center}
+.phone{position:relative;width:372px;height:806px;border-radius:44px;overflow:hidden;background:#070b11;box-shadow:0 0 0 2px #1b2330,0 0 0 9px #0b0f16,0 36px 80px rgba(0,0,0,.6)}
+.field{position:absolute;inset:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(58px);opacity:.85;mix-blend-mode:screen;animation:drift 26s ease-in-out infinite alternate}
+.blob:nth-child(2){animation-duration:31s;animation-direction:alternate-reverse}
+.blob:nth-child(3){animation-duration:36s}
+@keyframes drift{to{transform:translate(60px,-40px) scale(1.18)}}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:98px;height:28px;border-radius:20px;background:#000;z-index:6}
+.scroll{position:absolute;inset:0;overflow-y:auto;padding:52px 15px 126px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.glass{position:relative;border-radius:26px;background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.05) 45%,rgba(255,255,255,.1));-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 1px 0 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(255,255,255,.07),inset 0 0 22px rgba(255,255,255,.05),0 14px 34px rgba(0,0,0,.28);overflow:hidden;transition:transform .25s cubic-bezier(.2,1.4,.4,1),filter .25s}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 70% at 12% 0%,rgba(255,255,255,.2),transparent 55%);pointer-events:none}
+.glass:active{transform:scale(.975);filter:brightness(1.12)}
+.thick{background:linear-gradient(135deg,rgba(40,52,70,.62),rgba(20,28,40,.5));-webkit-backdrop-filter:blur(34px) saturate(180%);backdrop-filter:blur(34px) saturate(180%)}
+.pad{padding:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.full{grid-column:1/-1}
+.lab{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:6px}
+.num{font-variant-numeric:tabular-nums;font-weight:650;letter-spacing:-.4px}
+h1{font-size:30px;font-weight:650;letter-spacing:.3px}
+.sub{font-size:12.5px;color:var(--dim);margin-top:3px}
+svg{display:block}
+.mark{position:relative;width:44px;height:44px;flex:none;border-radius:15px;display:grid;place-items:center;font-size:18px;font-weight:700;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -8px 14px rgba(0,0,0,.18),0 6px 14px rgba(0,0,0,.28)}
+.mark.s{width:28px;height:28px;border-radius:10px;font-size:12px}
+.mark.l{width:78px;height:78px;border-radius:26px;font-size:32px}
+.flag{position:absolute;right:-6px;bottom:-6px;width:21px;height:21px;border-radius:50%;background:rgba(10,14,20,.85);display:grid;place-items:center;font-size:11px;box-shadow:0 0 0 1.5px rgba(255,255,255,.35)}
+.mark.l .flag{width:30px;height:30px;font-size:16px;right:-8px;bottom:-8px}
+.m-claude{background:linear-gradient(135deg,#e08a67,#b4532f)}
+.m-gpt{background:linear-gradient(135deg,#1fcf8b,#0b8a59)}
+.m-cursor{background:linear-gradient(135deg,#5b6472,#1d222b)}
+.m-gem{background:linear-gradient(135deg,#6ea8ff,#8f5bf0)}
+.m-ora{background:linear-gradient(135deg,#ff4d3d,#b01208)}
+.m-la{background:linear-gradient(135deg,#ff7a90,#c2335a)}
+.m-nsk{background:linear-gradient(135deg,#38c6ff,#1662c4)}
+.m-uk{background:linear-gradient(135deg,#7c8cff,#3a3fb8)}
+.m-icl{background:linear-gradient(135deg,#9fd3ff,#3c8ee6)}
+.dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--teal);animation:breathe 2.4s ease-out infinite}
+@keyframes breathe{0%{box-shadow:0 0 0 0 rgba(45,212,191,.6)}70%{box-shadow:0 0 0 9px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+.arc{stroke-dasharray:var(--len) 1000;stroke-dashoffset:var(--len);animation:arc 1.4s .3s cubic-bezier(.3,.8,.2,1) forwards}
+@keyframes arc{to{stroke-dashoffset:0}}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s .25s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .9s .9s ease forwards}
+@keyframes fade{to{opacity:1}}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-size:11.5px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip.on{background:linear-gradient(135deg,rgba(255,255,255,.36),rgba(255,255,255,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(0,0,0,.2);color:#fff}
+.legend{display:grid;gap:5px;margin-top:8px;font-size:11.5px;color:var(--dim)}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.legend span{float:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.bars{display:flex;align-items:flex-end;gap:5px}
+.bars i{flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,rgba(126,240,221,.95),rgba(96,165,250,.35));transform-origin:bottom;transform:scaleY(0);animation:grow .7s cubic-bezier(.2,1.3,.4,1) forwards}
+.bars i.f{background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.08))}
+.bars i.now{background:linear-gradient(180deg,#fff,rgba(126,240,221,.7));box-shadow:0 0 16px rgba(126,240,221,.7)}
+@keyframes grow{to{transform:scaleY(1)}}
+.dock{position:absolute;left:14px;right:14px;bottom:20px;display:flex;gap:9px;align-items:center;z-index:4}
+.nav{flex:1;height:62px;border-radius:31px;display:flex;align-items:center;padding:6px;position:relative}
+.nav .drop{position:absolute;top:6px;left:6px;height:50px;width:calc((100% - 12px)/4);border-radius:25px;background:linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.1));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -6px 12px rgba(45,212,191,.22),0 6px 16px rgba(0,0,0,.25);transition:transform .55s cubic-bezier(.3,1.5,.4,1),width .3s}
+.nav button{flex:1;height:50px;background:none;border:0;color:var(--dim);font:inherit;font-size:10.5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:relative;z-index:1;cursor:pointer}
+.nav button.on{color:#fff}
+.nav svg,.ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.add{width:62px;height:62px;flex:none;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(45,212,191,.78),rgba(96,165,250,.42))}
+.add svg{width:25px;height:25px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round}
+.ic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none}
+.row{display:flex;align-items:center;gap:10px}
+.sp{margin-left:auto}
+.tile{padding:14px;min-height:150px;display:flex;flex-direction:column}
+.tile .nm{font-size:14px;font-weight:600;margin-top:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .cy{font-size:11px;color:var(--dim);margin-top:1px}
+.tile .pr{margin-top:auto;padding-top:8px;font-size:19px}
+.tile .pr small{font-size:11px;font-weight:500;opacity:.7;margin-right:2px}
+.mini{position:relative;width:40px;height:40px;margin-left:auto}
+.mini b{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:650;font-variant-numeric:tabular-nums}
+.tb{height:4px;border-radius:4px;background:rgba(255,255,255,.14);margin-top:8px;overflow:hidden}
+.tb i{display:block;height:100%;border-radius:4px}
+.liquid{position:relative;width:128px;height:128px;flex:none;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4),inset 0 10px 22px rgba(255,255,255,.12),inset 0 -12px 26px rgba(0,0,0,.35),0 10px 26px rgba(0,0,0,.3)}
+.liquid .lv{position:absolute;left:0;right:0;bottom:0;height:var(--h);background:linear-gradient(180deg,rgba(251,113,133,.95),rgba(190,40,90,.85));transition:height 1.4s}
+.liquid .wv{position:absolute;left:0;bottom:calc(var(--h) - 2px);width:200%;height:14px;animation:wave 3.2s linear infinite}
+.liquid .wv.b{opacity:.5;animation-duration:5s;animation-direction:reverse}
+@keyframes wave{to{transform:translateX(-50%)}}
+.liquid .tx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.liquid .tx b{font-size:32px;font-weight:650;line-height:1;font-variant-numeric:tabular-nums}
+.liquid .tx span{font-size:11px;opacity:.85;margin-top:3px}
+.liquid::after{content:"";position:absolute;left:16%;top:9%;width:42%;height:26%;border-radius:50%;background:radial-gradient(rgba(255,255,255,.5),transparent 70%);transform:rotate(-24deg)}
+.kv{display:grid;gap:7px;font-size:12px;color:var(--dim)}
+.kv b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;float:right}
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;text-align:center}
+.gauges div{font-size:11px;color:var(--dim)}
+.gauges b{display:block;font-size:14px;color:var(--ink);margin-top:-16px;font-variant-numeric:tabular-nums}
+.btn{height:50px;border-radius:25px;display:grid;place-items:center;font-size:14.5px;font-weight:600;background:linear-gradient(135deg,rgba(45,212,191,.8),rgba(96,165,250,.45))}
+.seg{display:flex;padding:4px;border-radius:999px;gap:2px}
+.seg span{flex:1;text-align:center;font-size:12.5px;padding:7px 0;border-radius:999px;color:var(--dim)}
+.seg span.on{color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.1));box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}
+.cal span{aspect-ratio:1;border-radius:9px;background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:10.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.cal span.w{background:none;aspect-ratio:auto;height:16px}
+.cal span.p1{background:rgba(126,240,221,.28);color:#fff}
+.cal span.p2{background:rgba(126,240,221,.55);color:#062}
+.cal span.p3{background:linear-gradient(135deg,#7ef0dd,#60a5fa);color:#03202a;font-weight:700;box-shadow:0 0 14px rgba(126,240,221,.55)}
+.cal span.td{box-shadow:inset 0 0 0 1.5px #fff}
+.hb{display:grid;gap:9px;margin-top:10px}
+.hb .r{display:grid;grid-template-columns:28px 1fr 38px;gap:9px;align-items:center;font-size:12px}
+.hb .t{height:9px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.hb .t i{display:block;height:100%;border-radius:9px;transform-origin:left;transform:scaleX(0);animation:gx .9s .4s cubic-bezier(.2,1,.3,1) forwards}
+@keyframes gx{to{transform:scaleX(1)}}
+.hb .v{text-align:right;font-variant-numeric:tabular-nums}
+.sheet{position:absolute;left:0;right:0;bottom:0;border-radius:36px 36px 0 0;padding:10px 18px 30px;z-index:5}
+.handle{width:38px;height:5px;border-radius:5px;background:rgba(255,255,255,.4);margin:0 auto 14px}
+.fld{border-radius:18px;padding:11px 14px;background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,255,255,.08)}
+.fld label{display:block;font-size:11px;color:var(--dim)}
+.fld div{font-size:15px;margin-top:2px;font-variant-numeric:tabular-nums}
+.dim{position:absolute;inset:0;background:rgba(3,6,10,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:4}
+.picker{display:flex;gap:10px;overflow:hidden;margin:4px 0 14px}
+.picker .mark.sel{box-shadow:0 0 0 2.5px #fff,0 0 18px rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+<p class="top">Vluer 全部页面的布局设计，数据为示例。每个屏幕都可以上下滚动，总览页底部的标签可以点。真机上的图标会用各服务自己的标志，这里先用字母代替。</p>
+<div class="gallery">
+
+<div class="col"><div class="phone">
+  <div class="field"><div class="blob" style="width:330px;height:330px;left:-110px;top:-60px;background:#0fb9a6"></div><div class="blob" style="width:310px;height:310px;right:-120px;top:170px;background:#3b6df0"></div><div class="blob" style="width:290px;height:290px;left:-60px;top:440px;background:#7c4dde"></div><div class="blob" style="width:230px;height:230px;right:-40px;top:610px;background:#e08a1e;opacity:.55"></div></div>
+  <div class="island"></div>
+  <div class="scroll">
+    <div class="row" style="margin:0 3px 16px">
+      <svg width="44" height="44" viewBox="0 0 46 46"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ef0dd"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><circle cx="23" cy="23" r="19" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.35)"/><circle cx="23" cy="23" r="15" fill="none" stroke="url(#lg)" stroke-width="4.5" stroke-linecap="round" pathLength="1" stroke-dasharray=".78 1" transform="rotate(-210 23 23)"/><path d="M15.5 17.5 23 30l7.5-12.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div style="font-size:24px;font-weight:650">Vluer</div><div class="sub" style="margin-top:0">9月28日 星期一</div></div>
+      <div class="glass row sp" style="font-size:12px;padding:7px 12px;border-radius:999px;gap:7px"><span class="dot"></span>6 台在线</div>
+    </div>
+    <div class="grid">
+      <div class="glass pad full">
+        <div class="lab">本月支出</div>
+        <div class="num" style="font-size:44px;line-height:1.05;margin-top:5px"><span style="font-size:17px;font-weight:500;opacity:.7;margin-right:4px;position:relative;top:-16px">¥</span>386<span style="font-size:21px;opacity:.75">.40</span></div>
+        <div class="chips" style="margin-top:9px"><span class="chip">$ 40.00 / 月</span><span class="chip" style="color:#7ef0dd">比上月少 ¥21</span><span class="chip">9 个订阅</span></div>
+        <svg viewBox="0 0 330 86" width="100%" height="86" style="margin-top:6px"><defs><linearGradient id="f1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ef0dd" stop-opacity=".45"/><stop offset="1" stop-color="#7ef0dd" stop-opacity="0"/></linearGradient><linearGradient id="l1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7ef0dd"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+        <path class="fade" d="M0 76 C30 76 36 62 60 62 S92 54 118 54 S150 38 176 36 S214 32 236 20 S262 16 296 14 L296 86 L0 86Z" fill="url(#f1)"/><path class="draw" pathLength="1" d="M0 76 C30 76 36 62 60 62 S92 54 118 54 S150 38 176 36 S214 32 236 20 S262 16 296 14" fill="none" stroke="url(#l1)" stroke-width="3" stroke-linecap="round"/><path class="fade" d="M296 14 C310 13 320 10 330 8" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/><circle class="fade" cx="296" cy="14" r="10" fill="rgba(255,255,255,.22)"/><circle class="fade" cx="296" cy="14" r="5" fill="#fff"/></svg>
+      </div>
+      <div class="glass pad">
+        <div class="lab">最近到期</div>
+        <div style="position:relative;width:112px;height:112px;margin:9px auto 7px"><svg viewBox="0 0 118 118" width="112" height="112"><circle cx="59" cy="59" r="50" fill="none" stroke="rgba(255,255,255,.13)" stroke-width="9"/><circle class="arc" style="--len:282" cx="59" cy="59" r="50" fill="none" stroke="#fbbf24" stroke-width="9" stroke-linecap="round" transform="rotate(-90 59 59)"/></svg><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><b class="num" style="font-size:30px;line-height:1">3</b><span style="font-size:11px;color:var(--dim);margin-top:3px">天后</span></div></div>
+        <div class="row" style="justify-content:center;font-size:12.5px;gap:7px"><span class="mark s m-claude">C</span>Claude Max</div>
+      </div>
+      <div class="glass pad">
+        <div class="lab">流量总览</div>
+        <svg viewBox="0 0 118 118" width="100" height="100" style="margin:8px auto 0"><g fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(-90 59 59)"><circle cx="59" cy="59" r="52" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:307" cx="59" cy="59" r="52" stroke="#fb7185"/><circle cx="59" cy="59" r="41" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:160" cx="59" cy="59" r="41" stroke="#fbbf24"/><circle cx="59" cy="59" r="30" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:58" cx="59" cy="59" r="30" stroke="#2dd4bf"/><circle cx="59" cy="59" r="19" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:22" cx="59" cy="59" r="19" stroke="#60a5fa"/></g></svg>
+        <div class="legend"><div><i style="background:#fb7185"></i>洛杉矶<span>94%</span></div><div><i style="background:#fbbf24"></i>法兰克福<span>62%</span></div><div><i style="background:#2dd4bf"></i>新西伯利亚<span>31%</span></div></div>
+      </div>
+      <div class="glass pad full">
+        <div class="lab">未来 30 天</div>
+        <div style="position:relative;height:70px;margin-top:12px"><div style="position:absolute;left:4px;right:4px;top:44px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(255,255,255,.5),rgba(255,255,255,.12))"></div>
+        <span class="mark s m-claude" style="position:absolute;left:6%;top:6px">C</span><span class="mark s m-gpt" style="position:absolute;left:27%;top:6px">G</span><span class="mark s m-ora" style="position:absolute;left:53%;top:6px">甲</span><span class="mark s m-uk" style="position:absolute;left:82%;top:6px">伦</span>
+        <span style="position:absolute;left:6%;top:52px;font-size:10.5px;color:var(--faint)">10/1</span><span style="position:absolute;left:27%;top:52px;font-size:10.5px;color:var(--faint)">10/7</span><span style="position:absolute;left:53%;top:52px;font-size:10.5px;color:var(--faint)">10/15</span><span style="position:absolute;left:82%;top:52px;font-size:10.5px;color:var(--faint)">10/24</span></div>
+      </div>
+      <div class="glass pad full">
+        <div class="lab">节点实时</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px">
+          <div class="fld" style="padding:9px 10px;border-radius:16px"><div class="row" style="font-size:11.5px;gap:6px"><span class="dot"></span>法兰克福</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 18 L10 14 L20 17 L30 8 L40 12 L50 6 L60 14 L70 10 L80 15 L90 9" fill="none" stroke="#7ef0dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><label>↑ 1.2 MB/s</label></div>
+          <div class="fld" style="padding:9px 10px;border-radius:16px"><div class="row" style="font-size:11.5px;gap:6px"><span class="dot"></span>洛杉矶</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 10 L10 16 L20 6 L30 12 L40 4 L50 14 L60 8 L70 18 L80 9 L90 13" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><label>↑ 8.6 MB/s</label></div>
+          <div class="fld" style="padding:9px 10px;border-radius:16px"><div class="row" style="font-size:11.5px;gap:6px"><span class="dot"></span>伦敦</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 20 L10 19 L20 17 L30 19 L40 15 L50 18 L60 16 L70 19 L80 17 L90 18" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><label>↑ 86 KB/s</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dock"><div class="glass nav" id="nav"><div class="drop" id="drop"></div>
+    <button class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="2.5"/><rect x="13" y="3" width="8" height="6" rx="2.5"/><rect x="13" y="11" width="8" height="10" rx="2.5"/><rect x="3" y="15" width="8" height="6" rx="2.5"/></svg>总览</button>
+    <button><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>订阅</button>
+    <button><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-7M22 20H2"/></svg>统计</button>
+    <button><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>设置</button>
+  </div><div class="glass add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div></div>
+</div><div class="cap">总览<small>便当盒网格，首屏 5 种图表</small></div></div>
+
+<div class="col"><div class="phone">
+  <div class="field"><div class="blob" style="width:320px;height:320px;right:-110px;top:-70px;background:#7c4dde"></div><div class="blob" style="width:300px;height:300px;left:-120px;top:230px;background:#1a8fe0"></div><div class="blob" style="width:300px;height:300px;right:-80px;top:520px;background:#0fb9a6"></div></div>
+  <div class="island"></div>
+  <div class="scroll">
+    <div class="row" style="margin:6px 3px 14px"><div><h1>订阅</h1><div class="sub">9 个生效 · 月均 ¥386</div></div><div class="glass ic sp"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></div><div class="glass ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></div></div>
+    <div class="chips" style="margin:0 2px 13px;flex-wrap:nowrap;overflow:hidden"><span class="chip on">全部 9</span><span class="chip">AI 4</span><span class="chip">VPS 4</span><span class="chip">其他 1</span><span class="chip">待补充 2</span></div>
+    <div class="glass pad" style="margin-bottom:11px;background:linear-gradient(135deg,rgba(251,191,36,.26),rgba(255,255,255,.06) 55%,rgba(255,255,255,.1))">
+      <div class="row"><span class="mark m-claude">C</span><div><div style="font-size:15.5px;font-weight:600">Claude Max</div><div class="sub" style="margin-top:0;font-size:11.5px">月付 · 自动续费</div></div>
+      <div class="sp" style="text-align:right"><div class="num" style="font-size:21px"><small style="font-size:12px;opacity:.7;margin-right:2px">$</small>100</div><div style="font-size:11.5px;color:#fcd34d">3 天后到期</div></div></div>
+      <div class="tb" style="margin-top:12px"><i style="width:90%;background:linear-gradient(90deg,#fde68a,#fbbf24)"></i></div>
+    </div>
+    <div class="grid">
+      <div class="glass tile"><div class="row"><span class="mark m-gpt">G</span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:68" cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>9</b></div></div><div class="nm">ChatGPT Plus</div><div class="cy">月付</div><div class="pr num"><small>$</small>20</div></div>
+      <div class="glass tile"><div class="row"><span class="mark m-la">洛<span class="flag">🇺🇸</span></span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:30" cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>62</b></div></div><div class="nm">洛杉矶 9929</div><div class="cy">季付 · 流量 94%</div><div class="tb"><i style="width:94%;background:linear-gradient(90deg,#fbbf24,#fb7185)"></i></div><div class="pr num"><small>¥</small>129</div></div>
+      <div class="glass tile"><div class="row"><span class="mark m-ora">甲<span class="flag">🇩🇪</span></span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:45" cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>17</b></div></div><div class="nm">甲骨文 法兰克福</div><div class="cy">月付 · 流量 62%</div><div class="tb"><i style="width:62%;background:linear-gradient(90deg,#2dd4bf,#fbbf24)"></i></div><div class="pr num"><small>¥</small>36</div></div>
+      <div class="glass tile"><div class="row"><span class="mark m-cursor">▲</span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:22" cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>24</b></div></div><div class="nm">Cursor Pro</div><div class="cy">月付 · 自动续费</div><div class="pr num"><small>$</small>20</div></div>
+      <div class="glass tile"><div class="row"><span class="mark m-nsk">新<span class="flag">🇷🇺</span></span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:8" cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>28</b></div></div><div class="nm">新西伯利亚</div><div class="cy">月付 · 流量 31%</div><div class="tb"><i style="width:31%;background:#2dd4bf"></i></div><div class="pr num"><small>₽</small>390</div></div>
+      <div class="glass tile"><div class="row"><span class="mark m-icl">☁</span><div class="mini"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="4"/><circle class="arc" style="--len:84" cx="20" cy="20" r="16" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg><b>5</b></div></div><div class="nm">iCloud 200GB</div><div class="cy">月付</div><div class="pr num"><small>¥</small>21</div></div>
+    </div>
+  </div>
+  <div class="dock"><div class="glass nav"><div class="drop" style="transform:translateX(100%)"></div><button><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="2.5"/><rect x="13" y="3" width="8" height="6" rx="2.5"/><rect x="13" y="11" width="8" height="10" rx="2.5"/><rect x="3" y="15" width="8" height="6" rx="2.5"/></svg>总览</button><button class="on"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>订阅</button><button><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-7M22 20H2"/></svg>统计</button><button><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg>设置</button></div><div class="glass add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div></div>
+</div><div class="cap">订阅<small>最先到期的置顶，其余为图标方块，右上角是到期环</small></div></div>
+
+<div class="col"><div class="phone">
+  <div class="field"><div class="blob" style="width:380px;height:380px;left:-60px;top:-140px;background:#e0446a"></div><div class="blob" style="width:300px;height:300px;right:-130px;top:260px;background:#3b6df0"></div><div class="blob" style="width:300px;height:300px;left:-100px;top:520px;background:#7c4dde"></div></div>
+  <div class="island"></div>
+  <div class="scroll" style="padding-bottom:40px">
+    <div class="row" style="margin:2px 0 8px"><div class="glass ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></div><div class="glass row sp" style="font-size:12px;padding:7px 12px;border-radius:999px;gap:7px"><span class="dot"></span>在线 · 开机 58 天</div><div class="glass ic"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/></svg></div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin:4px 0 16px">
+      <div class="glass" style="padding:13px;border-radius:36px;overflow:visible"><span class="mark l m-la">洛<span class="flag">🇺🇸</span></span></div>
+      <div style="font-size:23px;font-weight:650;margin-top:12px">洛杉矶 9929</div>
+      <div class="sub">VPS · 季付 · 62 天后到期</div>
+      <div class="chips" style="margin-top:10px"><span class="chip num">¥129 / 季</span><span class="chip num">折合 ¥43 / 月</span><span class="chip num">已花 ¥516</span></div>
+    </div>
+    <div class="glass pad" style="margin-bottom:11px">
+      <div class="lab">本周期流量<span class="sp" style="margin-left:auto">9月1日 – 9月30日</span></div>
+      <div class="row" style="gap:16px;margin-top:12px">
+        <div class="liquid" style="--h:94%"><div class="lv"></div>
+          <svg class="wv" viewBox="0 0 400 14" preserveAspectRatio="none"><path d="M0 7 Q25 0 50 7 T100 7 T150 7 T200 7 T250 7 T300 7 T350 7 T400 7 V14 H0Z" fill="rgba(251,113,133,.95)"/></svg>
+          <svg class="wv b" viewBox="0 0 400 14" preserveAspectRatio="none"><path d="M0 7 Q25 14 50 7 T100 7 T150 7 T200 7 T250 7 T300 7 T350 7 T400 7 V14 H0Z" fill="rgba(255,190,200,.9)"/></svg>
+          <div class="tx"><b>94%</b><span>已用</span></div></div>
+        <div class="kv" style="flex:1"><div>已用<b>470 GB</b></div><div>限额<b>500 GB</b></div><div>上行<b>212 GB</b></div><div>下行<b>470 GB</b></div><div>剩余<b style="color:#fda4af">30 GB</b></div></div>
+      </div>
+    </div>
+    <div class="glass pad" style="margin-bottom:11px">
+      <div class="lab">用量预测<span style="margin-left:auto;color:#fda4af">按当前速度 9月29日 用完</span></div>
+      <svg viewBox="0 0 320 110" width="100%" height="110" style="margin-top:8px"><defs><linearGradient id="f3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb7185" stop-opacity=".4"/><stop offset="1" stop-color="#fb7185" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 22 H320" stroke="rgba(255,255,255,.55)" stroke-width="1.5" stroke-dasharray="2 5"/><text x="318" y="16" text-anchor="end" font-size="10" fill="rgba(255,255,255,.7)">限额 500 GB</text>
+      <path class="fade" d="M0 100 C40 96 60 88 90 80 S150 62 190 50 S250 34 286 28 L286 110 L0 110Z" fill="url(#f3)"/>
+      <path class="draw" pathLength="1" d="M0 100 C40 96 60 88 90 80 S150 62 190 50 S250 34 286 28" fill="none" stroke="#fb7185" stroke-width="3" stroke-linecap="round"/>
+      <path class="fade" d="M286 28 L320 12" fill="none" stroke="#fda4af" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/>
+      <circle class="fade" cx="286" cy="28" r="9" fill="rgba(251,113,133,.3)"/><circle class="fade" cx="286" cy="28" r="4.5" fill="#fff"/>
+      <text x="0" y="108" font-size="10" fill="rgba(255,255,255,.45)">9/1</text><text x="286" y="108" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)">今天</text></svg>
+    </div>
+    <div class="glass pad" style="margin-bottom:11px">
+      <div class="lab">实时<span style="margin-left:auto"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#7ef0dd;margin-right:4px"></i>上行 8.6 MB/s<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#a78bfa;margin:0 4px 0 10px"></i>下行 1.1 MB/s</span></div>
+      <svg viewBox="0 0 320 64" width="100%" height="64" style="margin-top:8px"><path class="draw" pathLength="1" d="M0 40 L20 30 L40 36 L60 18 L80 26 L100 12 L120 28 L140 20 L160 34 L180 14 L200 24 L220 10 L240 22 L260 16 L280 30 L300 12 L320 20" fill="none" stroke="#7ef0dd" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path class="draw" pathLength="1" d="M0 56 L20 52 L40 54 L60 48 L80 52 L100 46 L120 53 L140 50 L160 55 L180 47 L200 51 L220 49 L240 54 L260 50 L280 53 L300 48 L320 51" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="gauges">
+        <div><svg viewBox="0 0 80 46" width="100%" height="46"><path d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7" stroke-linecap="round"/><path class="arc" style="--len:38" d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="#2dd4bf" stroke-width="7" stroke-linecap="round"/></svg><b>38%</b>CPU</div>
+        <div><svg viewBox="0 0 80 46" width="100%" height="46"><path d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7" stroke-linecap="round"/><path class="arc" style="--len:71" d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/></svg><b>71%</b>内存</div>
+        <div><svg viewBox="0 0 80 46" width="100%" height="46"><path d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="7" stroke-linecap="round"/><path class="arc" style="--len:54" d="M8 42 A32 32 0 0 1 72 42" fill="none" stroke="#60a5fa" stroke-width="7" stroke-linecap="round"/></svg><b>54%</b>硬盘</div>
+      </div>
+    </div>
+    <div class="glass pad">
+      <div class="lab">每日用量<span style="margin-left:auto">日均 16.2 GB</span></div>
+      <div class="bars" id="daily" style="height:70px;margin-top:10px"></div>
+      <div class="btn glass" style="margin-top:14px">标记已续费</div>
+    </div>
+  </div>
+</div><div class="cap">详情<small>背景染成该订阅的代表色，流量环里有晃动的液面</small></div></div>
+
+<div class="col"><div class="phone">
+  <div class="field"><div class="blob" style="width:320px;height:320px;left:-100px;top:-60px;background:#3b6df0"></div><div class="blob" style="width:300px;height:300px;right:-120px;top:240px;background:#0fb9a6"></div><div class="blob" style="width:320px;height:320px;left:-80px;top:520px;background:#a24ddf"></div></div>
+  <div class="island"></div>
+  <div class="scroll">
+    <div class="row" style="margin:6px 3px 12px"><div><h1>统计</h1><div class="sub">2026 年 9 月</div></div><div class="glass seg sp" style="width:150px"><span class="on">按月</span><span>按年</span></div></div>
+    <div class="grid">
+      <div class="glass pad full">
+        <div class="lab">每月应付<span style="margin-left:auto">浅色为未来月份</span></div>
+        <div class="num" style="font-size:30px;margin-top:4px"><span style="font-size:14px;opacity:.7;margin-right:3px">¥</span>386<span style="font-size:15px;opacity:.7">.40</span></div>
+        <div class="bars" id="monthly" style="height:96px;margin-top:10px"></div>
+        <div class="row" style="justify-content:space-between;font-size:10.5px;color:var(--faint);margin-top:5px"><span>4月</span><span>6月</span><span>8月</span><span style="color:#fff">9月</span><span>11月</span><span>1月</span><span>3月</span></div>
+      </div>
+      <div class="glass pad">
+        <div class="lab">分类占比</div>
+        <div style="position:relative;width:104px;margin:10px auto 0"><svg viewBox="0 0 118 118" width="104" height="104"><g fill="none" stroke-width="14" stroke-linecap="round"><circle class="arc" style="--len:140" cx="59" cy="59" r="46" stroke="#a78bfa" transform="rotate(-90 59 59)"/><circle class="arc" style="--len:88" cx="59" cy="59" r="46" stroke="#60a5fa" transform="rotate(100 59 59)"/><circle class="arc" style="--len:16" cx="59" cy="59" r="46" stroke="#2dd4bf" transform="rotate(228 59 59)"/></g></svg><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><b class="num" style="font-size:19px">55%</b><span style="font-size:10.5px;color:var(--dim)">AI</span></div></div>
+        <div class="legend"><div><i style="background:#a78bfa"></i>AI<span>¥212</span></div><div><i style="background:#60a5fa"></i>VPS<span>¥139</span></div><div><i style="background:#2dd4bf"></i>其他<span>¥35</span></div></div>
+      </div>
+      <div class="glass pad">
+        <div class="lab">花费排行</div>
+        <div class="hb">
+          <div class="r"><span class="mark s m-claude">C</span><div class="t"><i style="width:100%;background:linear-gradient(90deg,#e08a67,#fbbf24)"></i></div><span class="v">¥720</span></div>
+          <div class="r"><span class="mark s m-gpt">G</span><div class="t"><i style="width:40%;background:linear-gradient(90deg,#1fcf8b,#7ef0dd);animation-delay:.5s"></i></div><span class="v">¥144</span></div>
+          <div class="r"><span class="mark s m-cursor">▲</span><div class="t"><i style="width:40%;background:linear-gradient(90deg,#8b95a5,#cbd5e1);animation-delay:.6s"></i></div><span class="v">¥144</span></div>
+          <div class="r"><span class="mark s m-la">洛</span><div class="t"><i style="width:22%;background:linear-gradient(90deg,#ff7a90,#fda4af);animation-delay:.7s"></i></div><span class="v">¥43</span></div>
+          <div class="r"><span class="mark s m-ora">甲</span><div class="t"><i style="width:18%;background:linear-gradient(90deg,#ff4d3d,#fca5a5);animation-delay:.8s"></i></div><span class="v">¥36</span></div>
+        </div>
+      </div>
+      <div class="glass pad full">
+        <div class="lab">缴费日历<span style="margin-left:auto">颜色越深金额越大</span></div>
+        <div class="cal" id="cal"></div>
+      </div>
+      <div class="glass pad full">
+        <div class="lab">各台流量</div>
+        <div class="hb">
+          <div class="r" style="grid-template-columns:28px 1fr 44px"><span class="mark s m-la">洛</span><div class="t"><i style="width:94%;background:linear-gradient(90deg,#fbbf24,#fb7185)"></i></div><span class="v">94%</span></div>
+          <div class="r" style="grid-template-columns:28px 1fr 44px"><span class="mark s m-ora">甲</span><div class="t"><i style="width:62%;background:linear-gradient(90deg,#2dd4bf,#fbbf24);animation-delay:.5s"></i></div><span class="v">62%</span></div>
+          <div class="r" style="grid-template-columns:28px 1fr 44px"><span class="mark s m-nsk">新</span><div class="t"><i style="width:31%;background:#2dd4bf;animation-delay:.6s"></i></div><span class="v">31%</span></div>
+          <div class="r" style="grid-template-columns:28px 1fr 44px"><span class="mark s m-uk">伦</span><div class="t"><i style="width:12%;background:#60a5fa;animation-delay:.7s"></i></div><span class="v">12%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dock"><div class="glass nav"><div class="drop" style="transform:translateX(200%)"></div><button><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="2.5"/><rect x="13" y="3" width="8" height="6" rx="2.5"/><rect x="13" y="11" width="8" height="10" rx="2.5"/><rect x="3" y="15" width="8" height="6" rx="2.5"/></svg>总览</button><button><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>订阅</button><button class="on"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-7M22 20H2"/></svg>统计</button><button><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg>设置</button></div><div class="glass add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div></div>
+</div><div class="cap">统计<small>新增的页面，全部是图表</small></div></div>
+
+<div class="col"><div class="phone">
+  <div class="field"><div class="blob" style="width:320px;height:320px;right:-110px;top:-70px;background:#7c4dde"></div><div class="blob" style="width:300px;height:300px;left:-120px;top:230px;background:#1a8fe0"></div><div class="blob" style="width:300px;height:300px;right:-80px;top:520px;background:#0fb9a6"></div></div>
+  <div class="island"></div>
+  <div class="scroll"><div class="row" style="margin:6px 3px 14px"><div><h1>订阅</h1><div class="sub">9 个生效 · 月均 ¥386</div></div></div>
+    <div class="grid"><div class="glass tile"><span class="mark m-gpt">G</span><div class="nm">ChatGPT Plus</div></div><div class="glass tile"><span class="mark m-la">洛</span><div class="nm">洛杉矶 9929</div></div></div></div>
+  <div class="dim"></div>
+  <div class="glass thick sheet">
+    <div class="handle"></div>
+    <div class="row" style="margin-bottom:12px"><div style="font-size:19px;font-weight:650">新增订阅</div><div class="chips sp" style="margin-left:auto"><span class="chip on">AI</span><span class="chip">VPS</span><span class="chip">其他</span></div></div>
+    <div class="lab" style="margin-bottom:8px">图标 · 输入名称后自动匹配</div>
+    <div class="picker"><span class="mark m-claude sel">C</span><span class="mark m-gpt">G</span><span class="mark m-gem">✦</span><span class="mark m-cursor">▲</span><span class="mark m-icl">☁</span><span class="mark" style="background:rgba(255,255,255,.12)">＋</span></div>
+    <div style="display:grid;gap:9px">
+      <div class="fld"><label>名称</label><div>Claude Max</div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:9px"><div class="fld"><label>价格</label><div>100.00</div></div><div class="fld"><label>货币</label><div>USD $</div></div></div>
+      <div class="glass seg" style="border-radius:999px"><span class="on">月付</span><span>季付</span><span>年付</span><span>自定义</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px"><div class="fld"><label>下次到期</label><div>2026年10月1日</div></div><div class="fld"><label>自动续费</label><div>开启</div></div></div>
+      <div class="btn glass" style="margin-top:4px">保存</div>
+    </div>
+  </div>
+</div><div class="cap">新增订阅<small>厚玻璃弹层，从加号按钮生长出来</small></div></div>
+
+</div>
+<script>
+function bars(id, arr, futureFrom, nowAt) {
+  var el = document.getElementById(id);
+  arr.forEach(function (h, i) {
+    var b = document.createElement("i");
+    b.style.height = h + "%";
+    b.style.animationDelay = (0.3 + i * 0.05) + "s";
+    if (i === nowAt) b.className = "now"; else if (i > futureFrom) b.className = "f";
+    el.appendChild(b);
+  });
+}
+bars("monthly", [52, 60, 48, 92, 56, 64, 58, 100, 54, 62, 50, 88], 5, 5);
+bars("daily", [40, 52, 36, 60, 44, 70, 48, 38, 66, 58, 42, 74, 50, 62, 46, 80, 54, 68, 44, 72, 58, 90, 64, 52, 76, 60, 84, 96], 99, 27);
+var cal = document.getElementById("cal");
+["一", "二", "三", "四", "五", "六", "日"].forEach(function (w) { var s = document.createElement("span"); s.className = "w"; s.textContent = w; cal.appendChild(s); });
+var pay = {1: "p3", 7: "p1", 12: "p1", 15: "p2", 21: "p1", 24: "p2", 28: "p1"};
+for (var k = 0; k < 1; k++) { cal.appendChild(document.createElement("span")).style.visibility = "hidden"; }
+for (var d = 1; d <= 30; d++) { var c = document.createElement("span"); c.textContent = d; if (pay[d]) c.className = pay[d]; if (d === 28) c.className += " td"; cal.appendChild(c); }
+var nav = document.getElementById("nav"), drop = document.getElementById("drop"), bs = nav.querySelectorAll("button");
+bs.forEach(function (b, i) { b.addEventListener("click", function () {
+  bs.forEach(function (x) { x.classList.remove("on"); }); b.classList.add("on");
+  drop.style.width = "calc((100% - 12px) / 4 + 22px)"; drop.style.transform = "translateX(" + (i * 100) + "%)";
+  setTimeout(function () { drop.style.width = "calc((100% - 12px) / 4)"; }, 220);
+}); });
+</script>
+</body>
+</html>

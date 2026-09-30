@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Auto Backup rules for Android 11 and lower (Android 12+ uses data_extraction_rules.xml).
+   The Komari API key ciphertext is excluded: its AndroidKeyStore key is never backed up, so a
+   restored copy could not be decrypted anyway, and the secret should not leave the device.
+-->
+<full-backup-content>
+    <exclude domain="file" path="datastore/komari_secret.preferences_pb" />
+</full-backup-content>

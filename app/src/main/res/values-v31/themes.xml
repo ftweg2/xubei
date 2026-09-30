@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      Android 12+: the system splash shows the first frame of the 续杯 splash (the empty cup in its
+      base ring, drawable/splash_mark_*.xml) until the app's first frame; the app then plays the
+      rest of the animation (ui/SplashOverlay.kt). Theme.Vluer follows the system's dark mode;
+      on Android 13+ MainActivity switches the splash to one of the two themes below so it follows
+      the app's own theme setting.
+    -->
+    <style name="Theme.Vluer" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/vluer_background</item>
+        <item name="android:windowSplashScreenBackground">@color/vluer_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_mark</item>
+    </style>
+
+    <!-- The splash when the app's theme is set to dark (see MainActivity.applySplashTheme). -->
+    <style name="Theme.Vluer.SplashDark" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background_dark</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background_dark</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_mark_dark</item>
+    </style>
+
+    <!-- The splash when the app's theme is set to light. -->
+    <style name="Theme.Vluer.SplashLight" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background_light</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background_light</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_mark_light</item>
+    </style>
+</resources>

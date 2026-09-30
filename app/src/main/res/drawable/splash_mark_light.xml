@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!--
+      Splash (light theme): the first frame of the 续杯 splash animation, the empty
+      cup inside its base ring (mockup symbol "mark"). The app draws the same frame at the same
+      place and animates on from it (ui/SplashOverlay.kt): the ring draws itself, the liquid rises.
+      Scaled to 0.6 around the center (SplashOverlay draws the mark at the same size).
+    -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.6"
+        android:scaleY="0.6">
+        <path
+            android:pathData="M18,55A36,36 0,1 1,90,55A36,36 0,1 1,18,55Z"
+            android:strokeColor="#1FFFFFFF"
+            android:strokeWidth="5" />
+        <path android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="37"
+                    android:startY="0"
+                    android:endX="71"
+                    android:endY="0">
+                    <item android:offset="0" android:color="#57FFFFFF" />
+                    <item android:offset="0.5" android:color="#14FFFFFF" />
+                    <item android:offset="1" android:color="#38FFFFFF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z"
+            android:strokeColor="#D912234A"
+            android:strokeWidth="2.2"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M42.5,38.5L45.3,66"
+            android:strokeColor="#8C12234A"
+            android:strokeWidth="2.4"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

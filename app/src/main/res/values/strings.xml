@@ -1,0 +1,752 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+    <string name="app_name">续杯</string>
+
+    <!-- 导航 -->
+    <string name="tab_home">总览</string>
+    <string name="tab_subscriptions">订阅</string>
+    <string name="tab_settings">设置</string>
+    <string name="action_back">返回</string>
+    <string name="action_close">关闭</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_confirm">确定</string>
+    <string name="action_save">保存</string>
+    <string name="action_undo">撤销</string>
+    <string name="action_retry">重试</string>
+    <string name="action_dismiss">关闭提示</string>
+    <string name="action_clear">清除</string>
+
+    <!-- 分类 -->
+    <string name="category_ai">AI</string>
+    <string name="category_vps">VPS</string>
+    <string name="category_other">其他</string>
+
+    <!-- 周期 -->
+    <string name="cycle_monthly">月付</string>
+    <string name="cycle_quarterly">季付</string>
+    <string name="cycle_semi_annual">半年付</string>
+    <string name="cycle_annual">年付</string>
+    <string name="cycle_biennial">两年付</string>
+    <string name="cycle_triennial">三年付</string>
+    <string name="cycle_once">一次性</string>
+    <string name="cycle_custom">自定义</string>
+    <string name="cycle_every_n_days">每 %1$d 天</string>
+    <string name="cycle_every_n_months">每 %1$d 个月</string>
+    <string name="cycle_unit_day">天</string>
+    <string name="cycle_unit_month">月</string>
+    <string name="cycle_custom_count">周期长度</string>
+
+    <!-- 到期 -->
+    <string name="due_in_days">还有 %1$d 天</string>
+    <string name="due_today">今天到期</string>
+    <string name="due_overdue_days">已过期 %1$d 天</string>
+    <string name="due_permanent">长期有效</string>
+    <string name="due_no_date">未设到期日</string>
+    <string name="date_pattern_same_year">M月d日</string>
+    <string name="date_pattern_full">yyyy年M月d日</string>
+    <string name="date_pattern_header">M月d日 EEEE</string>
+
+    <!-- 通用组件 -->
+    <string name="auto_renew_on">自动续费</string>
+    <string name="archived_tag">已归档</string>
+    <string name="free_tag">免费</string>
+    <string name="traffic_percent_desc">流量已用 %1$s</string>
+    <string name="traffic_used_unlimited">已用 %1$s · 不限流量</string>
+    <string name="success_desc">操作成功</string>
+    <string name="loading_desc">正在加载</string>
+    <string name="date_field_pick">选择日期</string>
+
+    <!-- 总览 -->
+    <string name="home_upcoming_empty">%1$d 天内没有需要续费的订阅</string>
+    <string name="home_empty_title">欢迎使用续杯</string>
+    <string name="home_empty_message">添加你的第一个订阅，月均支出和到期提醒都会出现在这里。</string>
+    <string name="home_empty_action">添加订阅</string>
+    <string name="home_see_all">查看全部</string>
+
+    <!-- 订阅列表 -->
+    <string name="list_title">订阅</string>
+    <string name="list_filter_all">全部</string>
+    <string name="list_sort_desc">排序与显示</string>
+    <string name="sort_due_date">按到期日</string>
+    <string name="sort_price">按价格</string>
+    <string name="sort_name">按名称</string>
+    <string name="list_show_archived">显示已归档</string>
+    <string name="list_empty_title">还没有订阅</string>
+    <string name="list_empty_message">把 AI 会员、VPS 和其他定期付费的服务加进来，到期前不再手忙脚乱。</string>
+    <string name="list_empty_action">新增订阅</string>
+    <string name="list_filtered_empty_title">这个分类下还没有订阅</string>
+    <string name="list_filtered_empty_message">换个分类看看，或者直接新增一条。</string>
+    <string name="list_filtered_empty_action">查看全部</string>
+    <string name="list_archived_hidden">另有 %1$d 个已归档订阅未显示</string>
+
+    <!-- 详情 -->
+    <string name="detail_edit">编辑</string>
+    <string name="detail_archive">归档</string>
+    <string name="detail_unarchive">取消归档</string>
+    <string name="detail_delete">删除</string>
+    <string name="detail_due_section">到期</string>
+    <string name="detail_next_due">下次到期</string>
+    <string name="detail_days_left_label">剩余</string>
+    <string name="detail_days_overdue_label">已过期</string>
+    <string name="detail_cycle_progress">本期已过 %1$d%%</string>
+    <string name="detail_mark_renewed">标记已续费</string>
+    <string name="detail_renew_title">标记已续费</string>
+    <string name="detail_renew_from_due">从原到期日顺延</string>
+    <string name="detail_renew_from_due_desc">在 %1$s 的基础上顺延一个周期</string>
+    <string name="detail_renew_from_today">从今天起算</string>
+    <string name="detail_renew_from_today_desc">从今天开始重新计算一个周期</string>
+    <string name="detail_renew_new_due">新到期日 %1$s</string>
+    <string name="detail_renewed">已续费，下次到期 %1$s</string>
+    <string name="detail_renew_undone">已撤销续费</string>
+    <string name="detail_not_renewable_once">一次性购买，无需续费</string>
+    <string name="detail_not_renewable_permanent">长期有效，无需续费</string>
+    <string name="detail_info_section">订阅信息</string>
+    <string name="detail_price">价格</string>
+    <string name="detail_monthly_equivalent">折合每月</string>
+    <string name="detail_cycle">付费周期</string>
+    <string name="detail_currency">货币</string>
+    <string name="detail_auto_renew">自动续费</string>
+    <string name="detail_yes">是</string>
+    <string name="detail_no">否</string>
+    <string name="detail_note">备注</string>
+    <string name="detail_status_archived">这个订阅已归档，不计入支出和提醒。</string>
+    <string name="detail_delete_title">删除这个订阅？</string>
+    <string name="detail_delete_message">“%1$s”及其流量记录会被永久删除，无法恢复。</string>
+    <string name="detail_deleted">已删除“%1$s”</string>
+    <string name="detail_archived_done">已归档</string>
+    <string name="detail_unarchived_done">已取消归档</string>
+    <string name="detail_not_found">这个订阅不存在或已被删除</string>
+    <string name="detail_error">操作失败：%1$s</string>
+
+    <!-- 流量卡 -->
+    <string name="traffic_unlinked_title">尚未关联 Komari 节点</string>
+    <string name="traffic_unlinked_message">在设置里配置 Komari 面板后，就能关联节点并查看这台 VPS 的流量用量。</string>
+    <string name="traffic_unlinked_message_configured">编辑这个订阅，在“VPS 设置”里关联一个 Komari 节点，就能看到流量用量。</string>
+    <string name="traffic_limit">流量限额</string>
+    <string name="traffic_no_limit">不限流量</string>
+    <string name="traffic_limit_type">计算方式</string>
+    <string name="traffic_counting_mode">统计方式</string>
+    <string name="traffic_reset_day">重置日</string>
+    <string name="traffic_reset_day_value">每月 %1$d 日</string>
+    <string name="traffic_alert">提醒阈值</string>
+    <string name="traffic_alert_value">%1$d%%</string>
+    <string name="traffic_up">上行</string>
+    <string name="traffic_down">下行</string>
+
+    <string name="limit_type_sum">上下行之和</string>
+    <string name="limit_type_max">取上下行较大者</string>
+    <string name="limit_type_min">取上下行较小者</string>
+    <string name="limit_type_up">仅上行</string>
+    <string name="limit_type_down">仅下行</string>
+    <string name="counting_mode_komari">直接用 Komari 数值</string>
+    <string name="counting_mode_komari_desc">直接用面板上报的累计值。agent 启动时带上 --month-rotate 才是按月的用量，否则是开机以来的累计。开了 --month-rotate 的机器推荐用这种方式。</string>
+    <string name="counting_mode_app">App 自己累计</string>
+    <string name="counting_mode_app_desc">每次刷新记录增量，按重置日归零，适合没开 --month-rotate 的机器。精度取决于刷新频率，两次刷新之间机器重启会漏算。</string>
+
+    <!-- 编辑 -->
+    <string name="edit_title_new">新增订阅</string>
+    <string name="edit_title_edit">编辑订阅</string>
+    <string name="edit_section_vps">VPS 设置</string>
+    <string name="edit_name">名称</string>
+    <string name="edit_name_placeholder">例如 ChatGPT Plus</string>
+    <string name="edit_name_clear">清空名称</string>
+    <string name="edit_name_panel_hint">面板里的名称：%1$s</string>
+    <string name="edit_price">价格</string>
+    <string name="edit_currency">货币</string>
+    <string name="edit_currency_pick">选择常用货币</string>
+    <string name="edit_cycle">付费周期</string>
+    <string name="edit_permanent">长期有效</string>
+    <string name="edit_permanent_desc">没有到期日，不参与到期提醒</string>
+    <string name="edit_auto_renew">自动续费</string>
+    <string name="edit_note">备注</string>
+    <string name="edit_note_placeholder">账号、用途、续费渠道……</string>
+    <string name="edit_traffic_limit">流量限额</string>
+    <string name="edit_traffic_limit_placeholder">留空表示不限</string>
+    <string name="edit_limit_type">限额计算方式</string>
+    <string name="edit_counting_mode">统计方式</string>
+    <string name="edit_reset_day">流量重置日</string>
+    <string name="edit_reset_day_suffix">日</string>
+    <string name="edit_reset_day_hint">每月这一天流量归零，31 日在小月按月末处理</string>
+    <string name="edit_alert_percent">流量提醒阈值</string>
+    <string name="edit_komari_link">关联 Komari 节点</string>
+    <string name="edit_komari_link_disabled">请先在设置里配置 Komari</string>
+    <string name="edit_save">保存</string>
+    <string name="edit_saved">已保存“%1$s”</string>
+    <string name="edit_added">已添加“%1$s”</string>
+    <string name="edit_error_summary">有几项需要修改，请检查标红的字段</string>
+    <string name="edit_save_failed">保存失败：%1$s</string>
+    <string name="edit_discard_title">放弃未保存的修改？</string>
+    <string name="edit_discard_message">离开后，刚才填写的内容不会保存。</string>
+    <string name="edit_discard_confirm">放弃</string>
+    <string name="edit_discard_keep">继续编辑</string>
+    <string name="error_name_required">请填写名称</string>
+    <string name="error_name_too_long">名称最多 %1$d 个字</string>
+    <string name="error_price_invalid">请输入有效金额（至多两位小数）</string>
+    <string name="error_currency_required">请填写货币</string>
+    <string name="error_currency_too_long">货币代码最多 %1$d 个字符</string>
+    <string name="error_cycle_count">请输入 1 到 %1$d 之间的整数</string>
+    <string name="error_due_required">请选择到期日</string>
+    <string name="error_limit_invalid">请输入大于 0 的数字</string>
+    <string name="error_reset_day">请输入 1 到 31 之间的日期</string>
+
+
+    <!-- Komari 错误 -->
+    <string name="komari_error_not_configured">还没有配置 Komari 面板地址</string>
+    <string name="komari_error_invalid_url">面板地址格式不正确，请填写类似 https://status.example.com 的地址</string>
+    <string name="komari_error_unauthorized">面板开启了私有模式，需要填写 API Key 才能访问</string>
+    <string name="komari_error_unauthorized_key">API Key 无效或已被更换，请在面板后台复制新的 Key 重新填写</string>
+    <string name="komari_error_forbidden">面板拒绝了访问（403），请检查 API Key 或反向代理的访问限制</string>
+    <string name="komari_error_not_found">找不到接口（404），请确认填写的是面板首页地址，而不是某个子页面</string>
+    <string name="komari_error_http">面板返回了错误状态码 %1$d，请稍后再试</string>
+    <string name="komari_error_timeout">连接超时，请检查地址、端口是否正确，以及面板是否在线</string>
+    <string name="komari_error_dns">无法解析域名，请检查地址拼写或当前网络</string>
+    <string name="komari_error_ssl">HTTPS 证书校验失败，面板可能使用了自签名或过期的证书</string>
+    <string name="komari_error_cleartext">系统阻止了 HTTP 明文连接</string>
+    <string name="komari_error_network">无法连接到面板，请检查地址和网络</string>
+    <string name="komari_error_not_komari">返回的不是 Komari 数据：地址可能不是 Komari 面板，或被登录页、防火墙质询拦截</string>
+    <string name="komari_error_api">面板返回错误：%1$s</string>
+    <string name="komari_error_api_plain">面板返回了错误</string>
+    <string name="komari_error_parse">面板数据格式无法识别，可能是不兼容的 Komari 版本</string>
+    <string name="komari_error_encrypt">API Key 加密保存失败，请重试</string>
+
+    <!-- 流量卡（Komari） -->
+    <string name="traffic_used">已用</string>
+    <string name="traffic_no_data_title">还没有流量数据</string>
+    <string name="traffic_no_data_message">下拉刷新，从 Komari 读取这台 VPS 的最新用量。</string>
+    <string name="traffic_updated_at">数据更新于 %1$s</string>
+    <string name="traffic_offline">节点离线，面板最近没有收到它的上报；显示的是上次的数据</string>
+    <string name="traffic_offline_no_data">节点离线，面板最近没有收到它的上报</string>
+    <string name="traffic_fetch_failed">刷新失败，显示的是上次的数据。%1$s</string>
+    <string name="traffic_fetch_failed_no_data">刷新失败：%1$s</string>
+    <string name="traffic_node_missing">面板上已找不到节点“%1$s”，可能已被删除或隐藏。订阅保留不变。</string>
+    <string name="traffic_status_online">在线</string>
+    <string name="traffic_status_offline">离线</string>
+    <string name="traffic_refresh_failed">刷新失败：%1$s</string>
+    <string name="traffic_refreshed_partial">已刷新 %1$d 台，%2$d 台离线或失败</string>
+    <string name="time_just_now">刚刚</string>
+    <string name="time_minutes_ago">%1$d 分钟前</string>
+    <string name="time_hours_ago">%1$d 小时前</string>
+    <string name="time_yesterday">昨天 %1$s</string>
+    <string name="time_pattern_same_year">M月d日 HH:mm</string>
+    <string name="time_pattern_full">yyyy年M月d日 HH:mm</string>
+    <string name="time_pattern_clock">HH:mm</string>
+
+    <!-- 总览流量区 -->
+    <string name="home_traffic_setup_title">连接 Komari 查看流量</string>
+    <string name="home_traffic_setup_action">去设置</string>
+    <string name="home_traffic_unlinked_title">还没有关联节点</string>
+    <string name="home_traffic_import_action">导入节点</string>
+
+    <!-- Komari 设置 -->
+    <string name="komari_settings_title">Komari 面板</string>
+    <string name="komari_settings_intro">连接你自己部署的 Komari 监控面板，导入 VPS 节点并查看流量。数据只在手机和面板之间传输。</string>
+    <string name="komari_url_section">面板地址</string>
+    <string name="komari_url_label">地址</string>
+    <string name="komari_url_placeholder">https://status.example.com</string>
+    <string name="komari_url_hint">填写面板首页地址。自建面板可以用 http://IP:端口</string>
+    <string name="komari_key_section">API Key（可选）</string>
+    <string name="komari_key_label">API Key</string>
+    <string name="komari_key_hint">不填为访客模式。私有站点或隐藏节点需要填写。Key 加密保存在本机，权限等同管理员，请妥善保管。</string>
+    <string name="komari_key_saved">已保存</string>
+    <string name="komari_key_saved_desc">API Key 已加密保存在本机</string>
+    <string name="komari_key_replace">更换</string>
+    <string name="komari_key_clear">清除</string>
+    <string name="komari_key_cancel_replace">保留原 Key</string>
+    <string name="komari_key_cleared_pending">保存后将清除 API Key，改用访客模式</string>
+    <string name="komari_key_undo_clear">撤销</string>
+    <string name="komari_key_unreadable">已保存的 API Key 无法读取（可能恢复了备份或更换了设备），请重新输入。</string>
+    <string name="komari_key_show">显示 API Key</string>
+    <string name="komari_key_hide">隐藏 API Key</string>
+    <string name="komari_cleartext_warning">当前地址使用 HTTP，API Key 会以明文传输，同一网络中的他人可能截获。建议为面板启用 HTTPS。</string>
+    <string name="komari_test_section">连接状态</string>
+    <string name="komari_test_action">测试连接</string>
+    <string name="komari_test_idle">点“测试连接”确认面板可以访问</string>
+    <string name="komari_test_running">正在连接面板…</string>
+    <string name="komari_test_success">连接成功</string>
+    <string name="komari_test_failed">连接失败</string>
+    <string name="komari_test_version">版本 %1$s</string>
+    <string name="komari_test_version_unknown">版本未知</string>
+    <string name="komari_test_nodes">个节点</string>
+    <string name="komari_test_guest">访客模式</string>
+    <string name="komari_test_with_key">已使用 API Key</string>
+    <string name="komari_nodes_section">节点</string>
+    <string name="komari_import_entry">导入节点</string>
+    <string name="komari_import_entry_desc">从面板选择节点，生成或更新 VPS 订阅</string>
+    <string name="komari_sync_entry">立即同步</string>
+    <string name="komari_sync_never">同步价格、到期日和流量；还没有同步过</string>
+    <string name="komari_sync_last">上次同步：%1$s</string>
+    <string name="komari_save">保存</string>
+    <string name="komari_saved">已保存面板设置</string>
+    <string name="komari_removed">已移除面板设置</string>
+    <string name="komari_sync_done">同步完成：更新 %1$d 个，%2$d 个未变</string>
+    <string name="komari_sync_missing">同步完成，%1$d 个节点已不在面板上</string>
+    <string name="komari_sync_failed">同步失败：%1$s</string>
+    <string name="komari_syncing">正在同步…</string>
+
+    <!-- 节点导入 -->
+    <string name="import_title">导入节点</string>
+    <string name="import_select_all">全选</string>
+    <string name="import_select_none">全不选</string>
+    <string name="import_summary">共 %1$d 个节点</string>
+    <string name="import_count_new">新节点 %1$d</string>
+    <string name="import_count_update">有更新 %1$d</string>
+    <string name="import_count_linked">已关联 %1$d</string>
+    <string name="import_status_new">新节点</string>
+    <string name="import_status_linked">已关联</string>
+    <string name="import_status_update">有更新</string>
+    <string name="import_up_to_date">已是最新，无需导入</string>
+    <string name="import_linked_to">已关联到“%1$s”</string>
+    <string name="import_renamed_to">导入后名为“%1$s”</string>
+    <string name="import_name_label">导入后的名称</string>
+    <string name="import_name_clear">清空名称</string>
+    <string name="import_name_hint_panel">默认使用面板里的名称，可以直接改</string>
+    <string name="import_name_hint_locked">改过的名称会锁定，从面板同步时不会被覆盖</string>
+    <string name="import_changes_title">将要变更</string>
+    <string name="import_new_fields_title">将创建订阅</string>
+    <string name="import_locked_note">%1$d 个字段已在 App 中锁定，不会被覆盖</string>
+    <string name="import_expand">展开变更详情</string>
+    <string name="import_collapse">收起变更详情</string>
+    <string name="import_action">导入 %1$d 个节点</string>
+    <string name="import_action_none">选择要导入的节点</string>
+    <string name="import_running">正在导入…</string>
+    <string name="import_done">已导入：新增 %1$d 个，更新 %2$d 个</string>
+    <string name="import_missing_title">有 %1$d 个订阅关联的节点已不在面板上</string>
+    <string name="import_dropped">另有 %1$d 个节点缺少 uuid，已跳过</string>
+    <string name="import_empty_title">面板上还没有节点</string>
+    <string name="import_empty_message">在 Komari 里添加服务器并安装 agent 后，再回来导入。</string>
+    <string name="import_error_title">没能读取节点</string>
+    <string name="import_open_settings">检查面板设置</string>
+    <string name="import_not_configured_title">还没有配置面板</string>
+    <string name="import_not_configured_message">先填写 Komari 面板地址并测试连接，再来导入节点。</string>
+    <string name="import_hidden_tag">隐藏</string>
+    <string name="import_value_none">未设置</string>
+    <string name="import_value_unlimited">不限</string>
+    <string name="import_value_yes">开</string>
+    <string name="import_value_no">关</string>
+    <string name="field_name">名称</string>
+    <string name="field_price">价格</string>
+    <string name="field_currency">货币</string>
+    <string name="field_cycle">周期</string>
+    <string name="field_due">到期日</string>
+    <string name="field_auto_renew">自动续费</string>
+    <string name="field_traffic_limit">流量限额</string>
+    <string name="field_limit_type">限额计算</string>
+
+    <!-- 待补充（面板没有填写计费信息） -->
+    <string name="billing_incomplete_tag">待补充</string>
+    <string name="billing_incomplete_meta">价格和到期日待补充</string>
+    <string name="import_billing_missing_note">面板里没有填写价格和到期日，导入后可以在 app 里补充</string>
+    <string name="import_billing_missing_banner">%1$d 个节点在面板里没有填写价格和到期日。导入后会标记为“待补充”，不计入支出，也不会显示为过期，可以随时在 app 里填写。</string>
+    <string name="import_done_incomplete">已导入 %1$d 个节点，其中 %2$d 个需要补充价格和到期日</string>
+    <string name="import_complete_action">去补充</string>
+    <string name="detail_billing_missing_title">价格和到期日待补充</string>
+    <string name="detail_billing_missing_message">这个订阅来自 Komari，面板里没有填写价格和到期日。补充后就能计入支出并收到到期提醒。</string>
+    <string name="detail_billing_missing_action">去补充</string>
+    <string name="traffic_basis_uptime_days">开机 %1$d 天以来的累计</string>
+    <string name="traffic_basis_uptime_hours">开机 %1$d 小时以来的累计</string>
+    <string name="traffic_basis_unknown">Komari 上报的累计值</string>
+    <string name="traffic_basis_help_show">数字说明</string>
+    <string name="traffic_basis_help_hide">收起说明</string>
+    <string name="traffic_basis_help">Komari agent 默认上报开机以来的累计流量，重启后归零，不会按月清零。想按账单周期统计，请在 agent 启动参数里加上 --month-rotate 账单日（例如每月 1 日重置就加 --month-rotate 1）。加了之后，这里显示的就是本期用量。</string>
+
+    <!-- 编辑页：关联与锁定 -->
+    <string name="edit_komari_unlinked">未关联，点按选择节点</string>
+    <string name="edit_komari_missing">%1$s（面板上已找不到）</string>
+    <string name="edit_komari_pending_link">%1$s · 保存后生效</string>
+    <string name="edit_komari_pending_unlink">保存后解除关联</string>
+    <string name="edit_locked_title">已锁定 %1$d 个字段</string>
+    <string name="edit_locked_message">这些字段你在 App 里改过，同步时不会被面板覆盖。解锁后，下次同步会使用面板的值。</string>
+    <string name="edit_unlock_field">解锁%1$s</string>
+    <string name="edit_field_locked_desc">%1$s已锁定</string>
+    <string name="edit_link_taken">这个节点已经关联到其他订阅</string>
+    <string name="picker_title">关联 Komari 节点</string>
+    <string name="picker_hint">关联后，价格、到期日和流量限额会在同步时使用面板的值；之后你在 App 里改过的字段会被锁定保护。</string>
+    <string name="picker_unlink">解除关联</string>
+    <string name="picker_empty">面板上没有可关联的节点</string>
+    <string name="picker_linked_other">已关联到“%1$s”</string>
+
+    <!-- 设置 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_section_komari">Komari 监控</string>
+    <string name="settings_komari_panel">面板连接</string>
+    <string name="settings_komari_panel_desc">配置面板地址后可导入节点、查看流量</string>
+    <string name="settings_komari_sync">立即同步</string>
+    <string name="settings_section_reminder">提醒</string>
+    <string name="settings_reminder_days">到期提醒</string>
+    <string name="settings_reminder_days_value">到期前 %1$s 天</string>
+    <string name="settings_reminder_days_with_today">到期前 %1$s 天和当天</string>
+    <string name="settings_reminder_only_today">仅到期当天</string>
+    <string name="settings_reminder_none">不提醒</string>
+    <string name="settings_traffic_alert">默认流量阈值</string>
+    <string name="settings_traffic_alert_desc">新建 VPS 时默认在用量达到 %1$d%% 时提醒</string>
+    <string name="settings_section_display">显示</string>
+    <string name="settings_show_archived">在列表中显示已归档</string>
+    <string name="settings_show_archived_desc">已归档的订阅不计入支出和提醒</string>
+    <string name="settings_default_currency">默认货币</string>
+    <string name="settings_default_currency_desc">新增订阅时预先填入</string>
+    <string name="settings_section_about">关于</string>
+    <string name="settings_privacy">数据只保存在本机</string>
+    <string name="settings_privacy_desc">续杯不需要账号，也不会上传你的订阅信息</string>
+
+    <!-- 方式二（App 自己累计） -->
+    <string name="traffic_app_waiting_title">开始统计</string>
+    <string name="traffic_app_waiting_message">App 从现在起自己累计流量。下一次刷新会记下起点，之后每次刷新累加增量。</string>
+    <string name="traffic_app_waiting_unlinked">还没有关联 Komari 节点，关联后才能开始累计。</string>
+    <string name="traffic_app_period">本周期</string>
+    <string name="traffic_period_range">%1$s – %2$s</string>
+    <string name="traffic_app_used">已用构成</string>
+    <string name="traffic_app_used_parts">期初 %1$s + 累计 %2$s</string>
+    <string name="traffic_app_since">开始统计</string>
+    <string name="traffic_app_last_refresh">上次刷新</string>
+    <string name="traffic_app_never">还没有刷新</string>
+    <string name="traffic_app_baseline_set">已记下起点，下一次刷新开始累加。</string>
+    <string name="traffic_app_new_period">新周期已经开始，下一次刷新后开始计入本周期。</string>
+    <string name="traffic_app_accuracy_title">统计说明</string>
+    <string name="traffic_no_data_offline_message">节点上线并向面板上报后，这里会显示它的用量。</string>
+    <string name="traffic_note_show">展开</string>
+    <string name="traffic_note_hide">收起</string>
+    <string name="traffic_app_accuracy_body">App 每次刷新时读取一次计数器，把两次读数之差累加到本周期，所以：\n· 精度取决于刷新频率，刷新越勤越准；\n· 两次刷新之间机器重启，重启前那一段流量会漏算；\n· 系统省电可能推迟后台刷新，漏算的风险随之变大；\n· App 只能从开始统计的那一刻算起，之前用掉的请填在“期初已用量”里。\n开了 --month-rotate 的机器请用“直接用 Komari 数值”，更准确。</string>
+    <string name="traffic_month_rotate_warning">这台机器的计数器在重启后没有归零，或者没重启就归零过，像是 agent 开了 --month-rotate。这种机器建议改用“直接用 Komari 数值”。</string>
+    <string name="traffic_month_rotate_set_warning">你标注了这台机器的 agent 已开启按月统计。建议改用“直接用 Komari 数值”，数字直接来自面板，比 App 自己累计更准。</string>
+    <string name="traffic_basis_month">本月 %1$d 号以来的累计</string>
+    <string name="traffic_basis_month_rotate_suspected">看起来 agent 开了按月统计</string>
+    <string name="traffic_basis_help_suspected">这台机器的计数器在重启后没有归零，或者没重启就归零过，像是开了 --month-rotate，数字是本月重置日以来的累计。如果确实开了，请编辑订阅，打开“agent 已开启按月统计”，并把流量重置日设成和 --month-rotate 相同的日期。</string>
+    <string name="traffic_offline_long">节点离线很久了，面板一直没有收到它的上报。如果这台机器已经不用了，可以解除关联，订阅和历史数据会保留。</string>
+    <string name="traffic_unlink_action">解除关联</string>
+
+    <!-- 趋势和历史 -->
+    <string name="trend_title">近期用量</string>
+    <string name="trend_range_days">%1$d 天</string>
+    <string name="trend_today">今天</string>
+    <string name="trend_summary_desc">最近 %1$d 天每日用量，日均 %2$s，最高 %3$s（%4$s）</string>
+    <string name="trend_not_enough_message">每次刷新都会记下一次读数，攒够两天的数据后，这里会按天显示用量。</string>
+    <string name="trend_not_enough_message_some">已经开始记录了，再攒一天的数据就能看到每天的用量。</string>
+    <string name="history_title">历史周期</string>
+
+    <!-- 详情：解除关联、周期 -->
+    <string name="detail_cycle_unknown">未填写</string>
+    <string name="cycle_unknown_meta">周期未填写</string>
+    <string name="detail_unlink">解除 Komari 关联</string>
+    <string name="detail_unlink_title">解除与节点的关联？</string>
+    <string name="detail_unlink_message">这个订阅将不再从节点“%1$s”读取流量。订阅本身、App 累计的历史周期都会保留，之后也可以重新关联。</string>
+    <string name="detail_unlink_confirm">解除关联</string>
+    <string name="detail_unlinked_done">已解除关联</string>
+
+    <!-- 编辑：待补充、期初已用量、按月统计、提醒 -->
+    <string name="edit_price_optional">价格（可暂不填写）</string>
+    <string name="edit_cycle_unset_hint">周期还没填，可以先留空，补价格或到期日时再选。</string>
+    <string name="error_cycle_required">请选择付费周期</string>
+    <string name="edit_initial_used_title">本周期已经用了多少？</string>
+    <string name="edit_initial_used_why">App 只能从开始统计的那一刻算起。如果本周期已经用掉了一部分流量，请在这里填上（可以在服务商后台查到），这样已用量才能和账单对上。</string>
+    <string name="edit_initial_used">期初已用量</string>
+    <string name="edit_initial_used_hint">本周期开始到现在已用的流量，不填按 0 计算</string>
+    <string name="error_initial_used">请输入不小于 0 的数字</string>
+    <string name="edit_month_rotate">agent 已开启按月统计</string>
+    <string name="edit_month_rotate_desc">agent 启动参数带了 --month-rotate 时打开。之后 Komari 的数值就是每月重置日以来的累计，重置日请和参数保持一致。</string>
+    <string name="edit_month_rotate_mode2_warning">这台机器已开启按月统计，建议选择“直接用 Komari 数值”，比 App 自己累计更准。</string>
+    <string name="edit_reminder_custom">单独设置到期提醒</string>
+    <string name="edit_reminder_custom_on">只对这个订阅生效</string>
+    <string name="edit_reminder_default">默认：%1$s</string>
+    <string name="edit_reminder_none">都不选就不会收到这个订阅的到期提醒</string>
+    <string name="reminder_day_before">%1$d 天前</string>
+    <string name="reminder_day_today">当天</string>
+
+    <!-- 通知 -->
+    <string name="notify_channel_due">到期提醒</string>
+    <string name="notify_channel_due_desc">订阅到期前按设置的天数提醒</string>
+    <string name="notify_channel_traffic">流量提醒</string>
+    <string name="notify_channel_traffic_desc">VPS 流量用量达到阈值时提醒</string>
+    <string name="notify_due_title">%1$s 还有 %2$d 天到期</string>
+    <string name="notify_due_today_title">%1$s 今天到期</string>
+    <string name="notify_due_text">%1$s 到期 · %2$s</string>
+    <string name="notify_due_text_no_price">%1$s 到期</string>
+    <string name="notify_due_auto_renew_suffix"> · 已开启自动续费</string>
+    <string name="notify_traffic_title">%1$s 流量已用 %2$s</string>
+    <string name="notify_traffic_text">已用 %1$s，共 %2$s · 本周期 %3$s – %4$s</string>
+    <string name="notify_summary_due_title">%1$d 个订阅快到期了</string>
+    <string name="notify_summary_traffic_title">%1$d 台 VPS 流量提醒</string>
+    <string name="notify_explain_title">开启通知，不错过续费</string>
+    <string name="notify_explain_message">续杯只在这两种情况下通知你，不会推送其他内容。</string>
+    <string name="notify_explain_due">订阅快到期时提醒，默认提前 7 天、3 天、1 天和当天</string>
+    <string name="notify_explain_traffic" formatted="false">VPS 流量达到你设的阈值时提醒，另外在 95% 和 100% 各提醒一次</string>
+    <string name="notify_explain_allow">开启通知</string>
+    <string name="notify_explain_later">暂不</string>
+
+    <!-- 设置：提醒、后台、数据、调试 -->
+    <string name="settings_notifications">通知</string>
+    <string name="settings_notifications_on">到期和流量提醒会通过通知送达</string>
+    <string name="settings_notifications_not_asked">还没有开启，点这里开启通知</string>
+    <string name="settings_notifications_blocked">通知已关闭，提醒无法送达。请在系统设置里打开</string>
+    <string name="settings_notifications_on_short">已开启</string>
+    <string name="settings_notifications_enable">开启</string>
+    <string name="settings_notifications_to_settings">去设置</string>
+    <string name="settings_reminder_days_dialog_desc">到期前哪几天提醒。单个订阅可以在编辑页单独设置。</string>
+    <string name="settings_traffic_alert_dialog_desc" formatted="false">新添加的 VPS 默认在用量达到这个比例时提醒；另外在 95% 和 100% 各提醒一次。已有的 VPS 在各自的编辑页修改。</string>
+    <string name="settings_section_background">后台刷新</string>
+    <string name="settings_refresh_interval">流量刷新间隔</string>
+    <string name="settings_refresh_interval_desc">联网时在后台定期读取流量，并检查流量提醒</string>
+    <string name="settings_refresh_interval_off_desc">已关闭，只在下拉刷新时读取流量</string>
+    <string name="settings_refresh_off">关闭</string>
+    <string name="settings_refresh_minutes">%1$d 分钟</string>
+    <string name="settings_refresh_hour">1 小时</string>
+    <string name="settings_refresh_hours">%1$d 小时</string>
+    <string name="settings_reset_zone">重置时区</string>
+    <string name="settings_reset_zone_desc">流量重置日按这个时区的零点切换</string>
+    <string name="settings_background_limit_title">后台可能被系统限制</string>
+    <string name="settings_background_limit_desc">部分手机会限制 App 在后台运行，后台刷新和提醒可能被推迟。如果提醒经常迟到，可以在系统的电池优化里把续杯设为“不优化”或“无限制”。</string>
+    <string name="settings_background_limit_action">打开电池优化设置</string>
+    <string name="settings_section_data">数据</string>
+    <string name="settings_export">导出订阅</string>
+    <string name="settings_export_desc">把全部订阅保存为 JSON 文件，不含 API Key</string>
+    <string name="settings_import">导入订阅</string>
+    <string name="settings_import_desc">从导出的 JSON 文件恢复订阅</string>
+    <string name="settings_section_debug">调试（仅调试版）</string>
+    <string name="debug_run_reminders">立即检查提醒</string>
+    <string name="debug_run_reminders_desc">运行一次到期和流量提醒检查</string>
+    <string name="debug_run_refresh">立即后台刷新</string>
+    <string name="debug_run_refresh_desc">运行一次后台流量刷新</string>
+    <string name="debug_triggered">已交给后台执行</string>
+    <string name="settings_version_value">续杯 %1$s</string>
+
+    <!-- 时区 -->
+    <string name="zone_system">跟随系统（%1$s，UTC%2$s）</string>
+    <string name="zone_system_short">跟随系统</string>
+    <string name="zone_named">%1$s（UTC%2$s）</string>
+    <string name="zone_shanghai">北京时间</string>
+    <string name="zone_hong_kong">香港</string>
+    <string name="zone_tokyo">东京</string>
+    <string name="zone_singapore">新加坡</string>
+    <string name="zone_london">伦敦</string>
+    <string name="zone_berlin">柏林</string>
+    <string name="zone_moscow">莫斯科</string>
+    <string name="zone_new_york">纽约</string>
+    <string name="zone_los_angeles">洛杉矶</string>
+    <string name="zone_utc">UTC</string>
+
+    <!-- 导出导入 -->
+    <string name="backup_exported">已导出 %1$d 条订阅</string>
+    <string name="backup_export_failed">导出失败，请换个位置再试</string>
+    <string name="backup_import_title">导入 %1$d 条订阅？</string>
+    <string name="backup_import_nothing_title">没有可导入的新订阅</string>
+    <string name="backup_import_message">它们会作为新订阅加入，现有订阅不会被修改。</string>
+    <string name="backup_import_duplicates">%1$d 条已经存在，会跳过。</string>
+    <string name="backup_import_invalid">%1$d 条内容不完整，无法读取。</string>
+    <string name="backup_import_confirm">导入</string>
+    <string name="backup_imported">已导入 %1$d 条订阅</string>
+    <string name="backup_imported_links_dropped">已导入 %1$d 条订阅，其中 %2$d 条的节点已被其他订阅关联，未恢复关联</string>
+    <string name="backup_import_unreadable">无法读取这个文件</string>
+    <string name="backup_import_not_backup">这不是续杯导出的订阅文件</string>
+    <string name="backup_import_newer">这个文件来自更新版本的续杯，请先升级</string>
+    <string name="backup_import_too_large">文件太大，不像是续杯导出的订阅文件</string>
+
+    <!-- ================================================================ v2 liquid glass -->
+    <string name="tab_stats">统计</string>
+    <string name="dock_add_desc">新增订阅</string>
+
+    <!-- Overview -->
+    <string name="home_open_stats">查看统计</string>
+    <string name="home_open_detail">查看详情</string>
+    <string name="home_spend_label">本月支出</string>
+    <string name="home_spend_less">比上月少 %1$s</string>
+    <string name="home_spend_more">比上月多 %1$s</string>
+    <string name="home_spend_same">与上月持平</string>
+    <string name="home_spend_count">%1$d 个订阅</string>
+    <string name="home_spend_none">本月没有需要支付的订阅</string>
+    <string name="home_spend_desc">本月应付 %1$s，上月 %2$s；到今天已累计 %3$s</string>
+    <string name="home_due_label">最近到期</string>
+    <string name="home_due_after_unit">天后</string>
+    <string name="home_due_today_short">今</string>
+    <string name="home_due_today_unit">天到期</string>
+    <string name="home_due_overdue_unit">已过期</string>
+    <string name="home_due_none">暂无到期日</string>
+    <string name="home_due_desc">%1$s，%2$s，本周期已过 %3$d%%</string>
+    <string name="home_traffic_label">流量总览</string>
+    <string name="home_traffic_desc">各台流量用量：%1$s</string>
+    <string name="home_traffic_no_vps">添加 VPS 后，这里显示每台的流量</string>
+    <string name="home_traffic_no_limit">已关联的 VPS 都没有流量限额</string>
+    <string name="home_timeline_label">未来 %1$d 天</string>
+    <string name="home_timeline_desc">未来 %1$d 天有 %2$d 个订阅到期：%3$s</string>
+    <string name="home_nodes_label">节点实时</string>
+    <string name="home_nodes_setup">连接 Komari 面板后，这里显示每台 VPS 的在线状态和实时网速</string>
+    <string name="home_nodes_unlinked">从 Komari 导入节点后，这里显示实时网速</string>
+    <string name="home_node_waiting">等待数据</string>
+    <string name="home_node_offline">离线</string>
+    <string name="home_node_online">在线</string>
+    <string name="home_node_speed">↑ %1$s/s</string>
+    <string name="home_node_desc">%1$s，%2$s，上行 %3$s/s，下行 %4$s/s</string>
+    <string name="home_online_count">%1$d 台在线</string>
+    <string name="home_online_partial">%1$d/%2$d 台在线</string>
+    <string name="home_active_subs">%1$d 个生效</string>
+    <string name="home_category_label">分类占比</string>
+    <string name="home_category_desc">分类占比：%1$s</string>
+    <string name="home_year_label">全年预估</string>
+    <string name="home_year_future">浅色为未来月份</string>
+    <string name="home_year_desc">%1$d 年预计支出 %2$s</string>
+
+    <!-- Charts -->
+    <string name="chart_empty">数据不足，暂无图表</string>
+    <string name="chart_empty_short">暂无数据</string>
+    <string-array name="chart_weekdays">
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+        <item>日</item>
+    </string-array>
+
+    <!-- Statistics (placeholder until a later version) -->
+    <string name="stats_title">统计</string>
+    <string name="stats_subtitle">%1$d 年 %2$d 月</string>
+    <string name="stats_monthly_label">每月应付</string>
+    <string name="stats_ranking_label">花费排行</string>
+
+    <!-- ================================================================ v2 round 2 -->
+    <!-- Subscription page -->
+    <string name="list_subtitle">%1$d 个生效 · 月均 %2$s</string>
+    <string name="list_subtitle_count">%1$d 个生效</string>
+    <string name="list_chip_count">%1$s %2$d</string>
+    <string name="list_search_desc">搜索订阅</string>
+    <string name="list_search_label">按名称搜索</string>
+    <string name="list_search_placeholder">输入订阅名称</string>
+    <string name="list_search_close">关闭搜索</string>
+    <string name="list_search_empty">没有找到“%1$s”</string>
+    <string name="list_search_empty_message">换个关键词试试，名称里的任意一段都可以。</string>
+    <string name="list_search_clear">清除搜索</string>
+    <string name="list_view_rows">切换为列表视图</string>
+    <string name="list_view_tiles">切换为网格视图</string>
+    <string name="list_needs_info_empty">没有待补充的订阅</string>
+    <string name="list_meta_traffic">流量 %1$s</string>
+    <string name="list_meta_traffic_used">已用 %1$s</string>
+    <string name="list_due_in">%1$d 天后到期</string>
+    <string name="list_menu_open">打开操作菜单</string>
+    <string name="list_pinned_desc">最先到期：%1$s，%2$s，%3$s</string>
+    <string name="list_resources_desc">CPU %1$s，内存 %2$s，硬盘 %3$s</string>
+    <string name="list_renew_message">为“%1$s”选择新的到期日计算方式</string>
+
+    <!-- Detail page -->
+    <string name="detail_status_uptime">%1$s · 开机 %2$d 天</string>
+    <string name="detail_status_unreachable">连不上面板</string>
+    <string name="detail_chip_per">%1$s / %2$s</string>
+    <string name="detail_chip_monthly">折合 %1$s / 月</string>
+    <string name="detail_chip_spent">已花 %1$s</string>
+    <string name="cycle_short_month">月</string>
+    <string name="cycle_short_quarter">季</string>
+    <string name="cycle_short_half">半年</string>
+    <string name="cycle_short_year">年</string>
+    <string name="detail_due_ring_desc">到期环：%1$s</string>
+    <string name="detail_days_value">%1$d 天</string>
+    <string name="detail_spend_label">累计花费</string>
+    <string name="detail_spend_count">共 %1$d 次付款</string>
+    <string name="detail_spend_desc">从开始订阅到现在一共花了 %1$s，%2$d 次付款</string>
+    <string name="detail_spend_free">免费订阅，没有花费</string>
+    <string name="detail_spend_none">还没有付款记录</string>
+    <string name="detail_manage_label">管理</string>
+    <string name="detail_traffic_label">本周期流量</string>
+    <string name="traffic_limit_short">限额</string>
+    <string name="traffic_remaining">剩余</string>
+    <string name="traffic_over">超出</string>
+    <string name="forecast_label">用量预测</string>
+    <string name="forecast_runs_out">按当前速度 %1$s 用完</string>
+    <string name="forecast_enough">本周期内不会用完</string>
+    <string name="forecast_exceeded">已超出限额</string>
+    <string name="forecast_projected">预计周期末 %1$s</string>
+    <string name="forecast_limit">限额 %1$s</string>
+    <string name="forecast_rate">日均 %1$s</string>
+    <string name="forecast_too_early">本周期刚开始，明天再来看预测</string>
+    <string name="forecast_desc">本周期已用 %1$s，日均 %2$s，%3$s</string>
+    <string name="live_label">实时</string>
+    <string name="live_up">上行 %1$s/s</string>
+    <string name="live_down">下行 %1$s/s</string>
+    <string name="live_up_amount">上行 %1$s</string>
+    <string name="live_down_amount">下行 %1$s</string>
+    <string name="live_memory">内存</string>
+    <string name="live_disk">硬盘</string>
+    <string name="live_offline">节点离线，没有实时数据</string>
+    <string name="live_failed">暂时连不上面板，稍后自动重试</string>
+    <string name="live_desc">最近一分钟网速，上行 %1$s/s，下行 %2$s/s</string>
+    <string name="node_info_label">节点信息</string>
+    <string name="node_info_load">负载</string>
+    <string name="node_info_process">进程数</string>
+    <string name="node_info_connections">连接数</string>
+    <string name="node_info_connections_value">TCP %1$d · UDP %2$d</string>
+    <string name="node_info_uptime">开机时长</string>
+    <string name="node_info_uptime_days">%1$d 天 %2$d 小时</string>
+    <string name="node_info_uptime_hours">%1$d 小时</string>
+    <string name="node_info_system">系统和内核</string>
+    <string name="node_info_cpu">CPU 型号</string>
+    <string name="node_info_virtualization">虚拟化</string>
+    <string name="trend_average_value">日均 %1$s</string>
+
+    <!-- Add / edit sheet -->
+    <string name="editor_icon_title">图标 · 输入名称后自动匹配</string>
+    <string name="editor_icon_matched">已按名称匹配的图标</string>
+    <string name="editor_icon_current">当前图标</string>
+    <string name="editor_icon_more">更多图标、颜色和相册图片</string>
+    <string name="editor_icon_picker_title">选择图标</string>
+    <string name="editor_icon_gallery">从相册选择图片</string>
+    <string name="editor_icon_gallery_failed">这张图片读不出来，换一张试试</string>
+    <string name="editor_icon_auto_title">自动</string>
+    <string name="editor_icon_auto">按名称</string>
+    <string name="editor_icon_letter">字母标记</string>
+    <string name="editor_icon_picture">相册图片</string>
+    <string name="editor_icon_color">底色</string>
+    <string name="editor_icon_color_default">默认颜色</string>
+    <string name="editor_icon_color_item">底色</string>
+    <string name="editor_icon_builtin">内置图标（%1$d 个）</string>
+    <string name="editor_icon_search">搜索图标</string>
+    <string name="editor_icon_search_hint">例如 Claude、甲骨文</string>
+    <string name="editor_icon_search_empty">没有匹配的图标，可以用字母标记或相册图片</string>
+    <string name="editor_on">开启</string>
+    <string name="editor_off">关闭</string>
+    <string name="editor_more">更多设置</string>
+    <string name="editor_free">免费</string>
+    <string name="editor_free_desc">不需要付费，不计入支出</string>
+    <string name="edit_due_date_short">下次到期</string>
+    <string name="edit_due_date_optional_short">到期日（可选）</string>
+
+    <!-- Debug gallery -->
+    <string name="debug_gallery">玻璃与图表调试页</string>
+    <string name="debug_gallery_desc">图表组件、服务图标、玻璃降级和降低透明效果</string>
+    <string name="gallery_charts">图表</string>
+    <string name="gallery_icons">图标</string>
+    <string name="gallery_glass">玻璃</string>
+    <string name="gallery_tier_now">当前：%1$s</string>
+    <string name="gallery_tier_refractive">完整效果</string>
+    <string name="gallery_tier_blurred">Android 12 效果</string>
+    <string name="gallery_tier_tinted">Android 11 效果</string>
+    <string name="gallery_tier_solid">降低透明</string>
+    <string name="gallery_tier_native">本机原生</string>
+    <string name="gallery_tier_title">玻璃档位</string>
+    <string name="gallery_tier_desc">本机 API %1$d。可以强制使用低版本的降级效果，用来检查 Android 12（只有模糊和高光）和 Android 11 及以下（半透明着色加高光边）的表现。</string>
+    <string name="gallery_reduce_title">降低透明效果</string>
+    <string name="gallery_reduce_desc">开启后玻璃改用不透明度更高的底色，不做模糊。正式入口在后续版本的设置页。</string>
+    <string name="gallery_on">开启</string>
+    <string name="gallery_off">关闭</string>
+    <string name="gallery_thickness_title">三种厚度与着色</string>
+    <string name="gallery_tinted_sample">琥珀着色的玻璃</string>
+    <string name="gallery_chart_1">1 · 平滑面积曲线（末端预测虚线、当前点光晕）</string>
+    <string name="gallery_chart_2">2 · 环（到期环、流量环）</string>
+    <string name="gallery_chart_3">3 · 同心环</string>
+    <string name="gallery_chart_4">4 · 环形占比（可点选）</string>
+    <string name="gallery_chart_5">5 · 柱状图（堆叠、未来样式、当前高亮、可点选）</string>
+    <string name="gallery_chart_6">6 · 迷你曲线</string>
+    <string name="gallery_chart_7">7 · 半圆仪表</string>
+    <string name="gallery_chart_8">8 · 横向条形图</string>
+    <string name="gallery_chart_9">9 · 日历热力图</string>
+    <string name="gallery_chart_10">10 · 时间轴（图标钉在日期上）</string>
+    <string name="gallery_chart_11">11 · 液面流量环</string>
+    <string name="gallery_chart_12">12 · 带限额线的预测折线</string>
+    <string name="gallery_chart_empty">数据不足时的占位</string>
+    <string name="gallery_donut_hint">点选扇区查看占比</string>
+    <string name="gallery_used">已用</string>
+    <string name="gallery_limit_sample">限额 500 GB</string>
+    <string name="gallery_today">今天</string>
+    <string name="gallery_logo">续杯标志</string>
+    <string name="gallery_brands">内置服务图标（%1$d 个）</string>
+    <string name="gallery_letters">匹配不到时的字母标记与国旗小标</string>
+    <string name="gallery_sizes">三种尺寸</string>
+    <string name="gallery_thin">薄</string>
+    <string name="gallery_standard">标准</string>
+    <string name="gallery_thick">厚</string>
+</resources>

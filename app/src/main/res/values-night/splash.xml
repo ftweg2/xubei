@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="splash_mark" type="drawable">@drawable/splash_mark_dark</item>
+</resources>

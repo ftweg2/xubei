@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vluer 总览页效果图</title>
+<style>
+:root{--teal:#2dd4bf;--blue:#60a5fa;--violet:#a78bfa;--amber:#fbbf24;--coral:#fb7185;--ink:#eef6f8;--dim:rgba(238,246,248,.62);--faint:rgba(238,246,248,.38)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#05080c;color:var(--ink);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 16px 40px}
+.note{max-width:420px;font-size:13px;line-height:1.7;color:var(--dim);text-align:center}
+.phone{position:relative;width:392px;max-width:100%;height:852px;border-radius:46px;overflow:hidden;background:#070b11;box-shadow:0 0 0 2px #1b2330,0 0 0 10px #0b0f16,0 40px 90px rgba(0,0,0,.6)}
+.field{position:absolute;inset:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.85;mix-blend-mode:screen}
+.b1{width:340px;height:340px;left:-110px;top:-60px;background:#0fb9a6;animation:d1 22s ease-in-out infinite alternate}
+.b2{width:320px;height:320px;right:-120px;top:160px;background:#3b6df0;animation:d2 26s ease-in-out infinite alternate}
+.b3{width:300px;height:300px;left:-60px;top:430px;background:#7c4dde;animation:d3 30s ease-in-out infinite alternate}
+.b4{width:240px;height:240px;right:-40px;top:620px;background:#e08a1e;opacity:.6;animation:d1 34s ease-in-out infinite alternate-reverse}
+@keyframes d1{to{transform:translate(70px,50px) scale(1.15)}}
+@keyframes d2{to{transform:translate(-80px,-40px) scale(1.2)}}
+@keyframes d3{to{transform:translate(90px,-60px) scale(.9)}}
+.scroll{position:absolute;inset:0;overflow-y:auto;padding:54px 16px 130px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.glass{position:relative;border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 45%,rgba(255,255,255,.09));-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 1px 0 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(255,255,255,.07),inset 0 0 22px rgba(255,255,255,.05),0 14px 34px rgba(0,0,0,.28);overflow:hidden;transition:transform .25s cubic-bezier(.2,1.4,.4,1),filter .25s}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 70% at 12% 0%,rgba(255,255,255,.22),transparent 55%);pointer-events:none}
+.glass:active{transform:scale(.975);filter:brightness(1.12)}
+.head{display:flex;align-items:center;gap:12px;margin:0 4px 18px}
+.head h1{font-size:26px;font-weight:650;letter-spacing:.5px}
+.head p{font-size:12.5px;color:var(--dim);margin-top:2px}
+.state{margin-left:auto;font-size:12px;padding:7px 12px;border-radius:999px;display:flex;align-items:center;gap:7px}
+.dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:breathe 2.4s ease-out infinite}
+@keyframes breathe{70%{box-shadow:0 0 0 9px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full{grid-column:1/-1}
+.pad{padding:18px}
+.lab{font-size:12.5px;color:var(--dim);display:flex;align-items:center;gap:6px}
+.big{font-variant-numeric:tabular-nums;font-weight:650;letter-spacing:-.5px}
+.hero .big{font-size:46px;line-height:1.05;margin-top:6px}
+.hero .big small{font-size:22px;font-weight:600;opacity:.75}
+.hero .big sup{font-size:17px;font-weight:500;opacity:.7;margin-right:4px;vertical-align:top;position:relative;top:7px}
+.chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);font-variant-numeric:tabular-nums}
+.up{color:#7ef0dd}
+svg{display:block}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s .25s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .9s .9s ease forwards}
+@keyframes fade{to{opacity:1}}
+.rise{opacity:0;transform:translateY(16px) scale(.97);animation:rise .7s cubic-bezier(.2,1.2,.4,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.ringwrap{position:relative;width:118px;height:118px;margin:10px auto 6px}
+.ringwrap .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringwrap .mid b{font-size:30px;font-weight:650;font-variant-numeric:tabular-nums;line-height:1}
+.ringwrap .mid span{font-size:11.5px;color:var(--dim);margin-top:3px}
+.arc{stroke-dasharray:var(--len) 1000;stroke-dashoffset:var(--len);animation:arc 1.4s .4s cubic-bezier(.3,.8,.2,1) forwards}
+@keyframes arc{to{stroke-dashoffset:0}}
+.who{display:flex;align-items:center;gap:8px;justify-content:center;font-size:13px}
+.mark{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;font-size:12px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 10px rgba(0,0,0,.25)}
+.legend{display:grid;gap:5px;margin-top:8px;font-size:11.5px;color:var(--dim)}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.legend span{float:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.tl{position:relative;height:74px;margin-top:14px}
+.tl .line{position:absolute;left:4px;right:4px;top:46px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(255,255,255,.5),rgba(255,255,255,.12))}
+.tl .tick{position:absolute;top:54px;font-size:10.5px;color:var(--faint);transform:translateX(-50%)}
+.pin{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px}
+.pin .mark{width:30px;height:30px;border-radius:10px}
+.pin::after{content:"";width:2px;height:8px;background:rgba(255,255,255,.4);border-radius:2px}
+.nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.node{border-radius:16px;padding:9px 10px;background:rgba(255,255,255,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.node .n{font-size:11.5px;display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden}
+.node .s{font-size:10.5px;color:var(--dim);font-variant-numeric:tabular-nums;margin-top:1px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:46px;margin-top:12px}
+.bars i{flex:1;border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,rgba(126,240,221,.95),rgba(96,165,250,.35));transform-origin:bottom;transform:scaleY(0);animation:grow .7s cubic-bezier(.2,1.3,.4,1) forwards}
+.bars i.f{background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.08))}
+@keyframes grow{to{transform:scaleY(1)}}
+.dock{position:absolute;left:16px;right:16px;bottom:22px;display:flex;gap:10px;align-items:center}
+.nav{flex:1;height:64px;border-radius:32px;display:flex;align-items:center;padding:6px;position:relative}
+.nav .drop{position:absolute;top:6px;left:6px;height:52px;width:calc((100% - 12px)/4);border-radius:26px;background:linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.1));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -6px 12px rgba(45,212,191,.22),0 6px 16px rgba(0,0,0,.25);transition:transform .55s cubic-bezier(.3,1.5,.4,1),width .3s}
+.nav button{flex:1;height:52px;background:none;border:0;color:var(--dim);font:inherit;font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:relative;z-index:1;cursor:pointer}
+.nav button.on{color:#fff}
+.nav svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.add{width:64px;height:64px;flex:none;border-radius:50%;display:grid;place-items:center;cursor:pointer;background:linear-gradient(135deg,rgba(45,212,191,.75),rgba(96,165,250,.4))}
+.add svg{width:26px;height:26px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round}
+.island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:104px;height:30px;border-radius:20px;background:#000;z-index:5}
+</style>
+</head>
+<body>
+<p class="note">Vluer 总览页效果图，数据为示例。可以上下滚动，点底部标签看液滴移动，按住玻璃块看按压效果。</p>
+<div class="phone">
+  <div class="field"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+  <div class="island"></div>
+  <div class="scroll">
+    <div class="head">
+      <svg width="46" height="46" viewBox="0 0 46 46" aria-label="Vluer 标志">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ef0dd"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+        <circle cx="23" cy="23" r="19" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+        <circle cx="23" cy="23" r="15" fill="none" stroke="url(#lg)" stroke-width="4.5" stroke-linecap="round" pathLength="1" stroke-dasharray=".78 1" transform="rotate(-210 23 23)"/>
+        <path d="M15.5 17.5 23 30l7.5-12.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div><h1>Vluer</h1><p>9月28日 星期一</p></div>
+      <div class="glass state"><span class="dot"></span>6 台在线</div>
+    </div>
+
+    <div class="grid">
+      <div class="glass pad full hero rise">
+        <div class="lab">本月支出</div>
+        <div class="big"><sup>¥</sup>386<small>.40</small></div>
+        <div class="chips"><span class="chip">$ 40.00 / 月</span><span class="chip up">比上月少 ¥21</span><span class="chip">9 个订阅</span></div>
+        <svg viewBox="0 0 330 92" width="100%" height="92" style="margin-top:8px">
+          <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ef0dd" stop-opacity=".45"/><stop offset="1" stop-color="#7ef0dd" stop-opacity="0"/></linearGradient>
+          <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7ef0dd"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+          <path class="fade" d="M0 80 C30 80 36 66 60 66 S92 58 118 58 S150 40 176 38 S214 34 236 22 S262 18 296 16 L296 92 L0 92Z" fill="url(#fill)"/>
+          <path class="draw" pathLength="1" d="M0 80 C30 80 36 66 60 66 S92 58 118 58 S150 40 176 38 S214 34 236 22 S262 18 296 16" fill="none" stroke="url(#ln)" stroke-width="3" stroke-linecap="round"/>
+          <path class="fade" d="M296 16 C310 15 320 12 330 10" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/>
+          <circle class="fade" cx="296" cy="16" r="10" fill="rgba(255,255,255,.22)"/><circle class="fade" cx="296" cy="16" r="5" fill="#fff"/>
+        </svg>
+      </div>
+
+      <div class="glass pad rise" style="animation-delay:.08s">
+        <div class="lab">最近到期</div>
+        <div class="ringwrap">
+          <svg viewBox="0 0 118 118" width="118" height="118"><circle cx="59" cy="59" r="50" fill="none" stroke="rgba(255,255,255,.13)" stroke-width="9"/>
+          <circle class="arc" style="--len:282" cx="59" cy="59" r="50" fill="none" stroke="#fbbf24" stroke-width="9" stroke-linecap="round" transform="rotate(-90 59 59)"/></svg>
+          <div class="mid"><b>3</b><span>天后</span></div>
+        </div>
+        <div class="who"><span class="mark" style="background:linear-gradient(135deg,#d97757,#b85a3d)">C</span>Claude Max</div>
+      </div>
+
+      <div class="glass pad rise" style="animation-delay:.14s">
+        <div class="lab">流量总览</div>
+        <svg viewBox="0 0 118 118" width="104" height="104" style="margin:8px auto 0">
+          <g fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(-90 59 59)">
+            <circle cx="59" cy="59" r="52" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:307" cx="59" cy="59" r="52" stroke="#fb7185"/>
+            <circle cx="59" cy="59" r="41" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:160" cx="59" cy="59" r="41" stroke="#fbbf24"/>
+            <circle cx="59" cy="59" r="30" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:58" cx="59" cy="59" r="30" stroke="#2dd4bf"/>
+            <circle cx="59" cy="59" r="19" stroke="rgba(255,255,255,.12)"/><circle class="arc" style="--len:22" cx="59" cy="59" r="19" stroke="#60a5fa"/>
+          </g>
+        </svg>
+        <div class="legend">
+          <div><i style="background:#fb7185"></i>洛杉矶<span>94%</span></div>
+          <div><i style="background:#fbbf24"></i>法兰克福<span>62%</span></div>
+          <div><i style="background:#2dd4bf"></i>新西伯利亚<span>31%</span></div>
+        </div>
+      </div>
+
+      <div class="glass pad full rise" style="animation-delay:.2s">
+        <div class="lab">未来 30 天</div>
+        <div class="tl">
+          <div class="line"></div>
+          <div class="pin" style="left:10%"><span class="mark" style="background:linear-gradient(135deg,#d97757,#b85a3d)">C</span></div>
+          <div class="pin" style="left:30%"><span class="mark" style="background:linear-gradient(135deg,#19c37d,#0e8f5b)">G</span></div>
+          <div class="pin" style="left:57%"><span class="mark" style="background:linear-gradient(135deg,#f80000,#a40000)">甲</span></div>
+          <div class="pin" style="left:86%"><span class="mark" style="background:linear-gradient(135deg,#3b82f6,#1e40af)">伦</span></div>
+          <span class="tick" style="left:10%">10/1</span><span class="tick" style="left:30%">10/7</span><span class="tick" style="left:57%">10/15</span><span class="tick" style="left:86%">10/24</span>
+        </div>
+      </div>
+
+      <div class="glass pad full rise" style="animation-delay:.26s">
+        <div class="lab">节点实时</div>
+        <div class="nodes">
+          <div class="node"><div class="n"><span class="dot"></span>法兰克福</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 18 L10 14 L20 17 L30 8 L40 12 L50 6 L60 14 L70 10 L80 15 L90 9" fill="none" stroke="#7ef0dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="s">↑ 1.2 MB/s</div></div>
+          <div class="node"><div class="n"><span class="dot"></span>洛杉矶</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 10 L10 16 L20 6 L30 12 L40 4 L50 14 L60 8 L70 18 L80 9 L90 13" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="s">↑ 8.6 MB/s</div></div>
+          <div class="node"><div class="n"><span class="dot"></span>伦敦</div><svg viewBox="0 0 90 26" width="100%" height="26"><path class="draw" pathLength="1" d="M0 20 L10 19 L20 17 L30 19 L40 15 L50 18 L60 16 L70 19 L80 17 L90 18" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="s">↑ 86 KB/s</div></div>
+        </div>
+      </div>
+
+      <div class="glass pad rise" style="animation-delay:.32s">
+        <div class="lab">分类占比</div>
+        <svg viewBox="0 0 118 118" width="96" height="96" style="margin:10px auto 0">
+          <g fill="none" stroke-width="15">
+            <circle class="arc" style="--len:150" cx="59" cy="59" r="44" stroke="#a78bfa" transform="rotate(-90 59 59)"/>
+            <circle class="arc" style="--len:96" cx="59" cy="59" r="44" stroke="#60a5fa" transform="rotate(110 59 59)"/>
+            <circle class="arc" style="--len:24" cx="59" cy="59" r="44" stroke="#2dd4bf" transform="rotate(237 59 59)"/>
+          </g>
+        </svg>
+        <div class="legend"><div><i style="background:#a78bfa"></i>AI<span>55%</span></div><div><i style="background:#60a5fa"></i>VPS<span>36%</span></div></div>
+      </div>
+
+      <div class="glass pad rise" style="animation-delay:.38s">
+        <div class="lab">全年预估</div>
+        <div class="big" style="font-size:27px;margin-top:6px"><span style="font-size:14px;opacity:.7;margin-right:3px">¥</span>4,636</div>
+        <div class="bars">
+          <i style="height:52%;animation-delay:.5s"></i><i style="height:60%;animation-delay:.55s"></i><i style="height:48%;animation-delay:.6s"></i><i style="height:92%;animation-delay:.65s"></i><i style="height:56%;animation-delay:.7s"></i><i style="height:64%;animation-delay:.75s"></i><i class="f" style="height:58%;animation-delay:.8s"></i><i class="f" style="height:100%;animation-delay:.85s"></i><i class="f" style="height:54%;animation-delay:.9s"></i>
+        </div>
+        <div class="legend" style="margin-top:6px"><div>浅色为未来月份</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dock">
+    <div class="glass nav" id="nav">
+      <div class="drop" id="drop"></div>
+      <button class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="2.5"/><rect x="13" y="3" width="8" height="6" rx="2.5"/><rect x="13" y="11" width="8" height="10" rx="2.5"/><rect x="3" y="15" width="8" height="6" rx="2.5"/></svg>总览</button>
+      <button><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>订阅</button>
+      <button><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-7M22 20H2"/></svg>统计</button>
+      <button><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>设置</button>
+    </div>
+    <div class="glass add" aria-label="新增"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+  </div>
+</div>
+<script>
+var nav = document.getElementById("nav");
+var drop = document.getElementById("drop");
+var bs = nav.querySelectorAll("button");
+bs.forEach(function (b, i) {
+  b.addEventListener("click", function () {
+    bs.forEach(function (x) { x.classList.remove("on"); });
+    b.classList.add("on");
+    drop.style.width = "calc((100% - 12px) / 4 + 22px)";
+    drop.style.transform = "translateX(" + (i * 100) + "%)";
+    setTimeout(function () { drop.style.width = "calc((100% - 12px) / 4)"; }, 220);
+  });
+});
+</script>
+</body>
+</html>

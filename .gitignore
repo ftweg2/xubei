@@ -1,0 +1,29 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Local only: never pushed
+# backups/ holds old source archives and a copy of real app data from the phone
+/backups/
+# built APKs (attach them to a GitHub release instead)
+/release/
+*.apk
+# 500+ MB of test screenshots, some taken against the real Komari panel
+/docs/screenshots/
+/.claude/
+/.idea/
+.kotlin/
+*.jks
+*.keystore

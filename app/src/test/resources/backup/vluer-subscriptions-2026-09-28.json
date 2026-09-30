@@ -1,0 +1,69 @@
+{
+    "format": "vluer-subscriptions",
+    "version": 1,
+    "exported_at": "2026-09-28T08:00:00Z",
+    "subscriptions": [
+        {
+            "name": "ChatGPT Plus",
+            "category": "AI",
+            "price_minor": 2000,
+            "is_free": false,
+            "currency": "USD",
+            "cycle_unit": "MONTH",
+            "cycle_count": 1,
+            "cycle_known": true,
+            "next_due": "2026-10-01",
+            "anchor_day": 31,
+            "is_permanent": false,
+            "auto_renew": true,
+            "note": "账号 a@b.c",
+            "archived": false,
+            "reminder_days": [
+                3,
+                0
+            ],
+            "icon_key": "openai",
+            "icon_color": -16738680
+        },
+        {
+            "name": "甲骨文-eu-92",
+            "category": "VPS",
+            "price_minor": 0,
+            "is_free": false,
+            "currency": "CNY",
+            "cycle_unit": "MONTH",
+            "cycle_count": 1,
+            "cycle_known": false,
+            "is_permanent": false,
+            "auto_renew": false,
+            "note": "",
+            "archived": false,
+            "vps": {
+                "komari_uuid": "uuid-1",
+                "komari_name": "eu-92",
+                "traffic_limit_bytes": 1099511627776,
+                "traffic_limit_type": "SUM",
+                "counting_mode": "APP_ACCUMULATED",
+                "reset_day": 15,
+                "alert_percent": 90,
+                "locked_fields": 1,
+                "agent_month_rotate": true,
+                "komari_region": "🇩🇪"
+            }
+        },
+        {
+            "name": "终身机",
+            "category": "OTHER",
+            "price_minor": 0,
+            "is_free": true,
+            "currency": "CNY",
+            "cycle_unit": "ONCE",
+            "cycle_count": 1,
+            "cycle_known": true,
+            "is_permanent": true,
+            "auto_renew": false,
+            "note": "",
+            "archived": true
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="216" height="216">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d3b44"/><stop offset=".55" stop-color="#12234a"/><stop offset="1" stop-color="#2a1a52"/></linearGradient>
+    <radialGradient id="glow" cx=".3" cy=".2" r=".9"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".55"/><stop offset=".6" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ef0dd"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8af5e2"/><stop offset="1" stop-color="#3f8cf0"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity=".34"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity=".22"/></linearGradient>
+    <clipPath id="cup"><path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z"/></clipPath>
+    <clipPath id="tile"><rect width="108" height="108" rx="26"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="108" height="108" fill="url(#bg)"/>
+    <rect width="108" height="108" fill="url(#glow)"/>
+    <circle cx="54" cy="55" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="5"/>
+    <circle cx="54" cy="55" r="36" fill="none" stroke="url(#ring)" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="74 100" transform="rotate(-205 54 55)"/>
+    <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="url(#glass)"/>
+    <g clip-path="url(#cup)">
+      <path d="M28 52 Q35 47.5 42 52 T56 52 T70 52 T84 52 V82 H28 Z" fill="url(#liq)"/>
+      <path d="M28 52 Q35 47.5 42 52 T56 52 T70 52 T84 52" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2"/>
+    </g>
+    <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M42.5 38.5 L45.3 66" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+</svg>

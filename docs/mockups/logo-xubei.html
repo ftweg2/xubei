@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>续杯 标志设计</title>
+<style>
+body{margin:0;padding:28px 18px 48px;background:#05080c;color:#eef6f8;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+h2{font-size:15px;font-weight:600;margin:26px 0 12px;color:rgba(238,246,248,.8)}
+p{font-size:13px;line-height:1.7;color:rgba(238,246,248,.62);max-width:640px}
+.row{display:flex;gap:26px;align-items:flex-end;flex-wrap:wrap}
+.cell{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:rgba(238,246,248,.55)}
+.tile{border-radius:24%;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.round{border-radius:50%}
+.light{background:#eef3f6;padding:18px;border-radius:18px}
+.bar{background:#0b1016;padding:10px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;font-size:13px}
+.wave{animation:w 3.2s ease-in-out infinite alternate}
+@keyframes w{to{transform:translateX(-6px)}}
+</style>
+</head>
+<body>
+<p>续杯的标志：一只盛着液体的玻璃杯，外面是一圈没有闭合的环。杯子代表“续”，环代表周期。环和 app 里的到期环、流量环是同一个符号。</p>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d3b44"/><stop offset=".55" stop-color="#12234a"/><stop offset="1" stop-color="#2a1a52"/></linearGradient>
+    <radialGradient id="glow" cx=".3" cy=".2" r=".9"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".55"/><stop offset=".6" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ef0dd"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8af5e2"/><stop offset="1" stop-color="#3f8cf0"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity=".34"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity=".22"/></linearGradient>
+    <clipPath id="cup"><path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z"/></clipPath>
+    <symbol id="logo" viewBox="0 0 108 108">
+      <rect width="108" height="108" fill="url(#bg)"/>
+      <rect width="108" height="108" fill="url(#glow)"/>
+      <circle cx="54" cy="55" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="5"/>
+      <circle cx="54" cy="55" r="36" fill="none" stroke="url(#ring)" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="74 100" transform="rotate(-205 54 55)"/>
+      <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="url(#glass)"/>
+      <g clip-path="url(#cup)">
+        <path class="wave" d="M28 52 Q35 47.5 42 52 T56 52 T70 52 T84 52 V82 H28 Z" fill="url(#liq)"/>
+        <path d="M28 52 Q35 47.5 42 52 T56 52 T70 52 T84 52" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2"/>
+      </g>
+      <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M42.5 38.5 L45.3 66" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mark" viewBox="0 0 108 108">
+      <circle cx="54" cy="55" r="36" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="5"/>
+      <circle cx="54" cy="55" r="36" fill="none" stroke="url(#ring)" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="74 100" transform="rotate(-205 54 55)"/>
+      <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="url(#glass)"/>
+      <g clip-path="url(#cup)"><path class="wave" d="M28 52 Q35 47.5 42 52 T56 52 T70 52 T84 52 V82 H28 Z" fill="url(#liq)"/></g>
+      <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M42.5 38.5 L45.3 66" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mono" viewBox="0 0 108 108">
+      <circle cx="54" cy="55" r="36" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" pathLength="100" stroke-dasharray="74 100" transform="rotate(-205 54 55)"/>
+      <path d="M37 33 H71 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M40.2 54 Q47 49 54 54 T67.8 54 L66.4 73.5 Q65.8 78 61.4 78 H46.6 Q42.2 78 41.6 73.5 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<h2>启动图标</h2>
+<div class="row">
+  <div class="cell"><svg class="tile" width="192" height="192"><use href="#logo"/></svg>192</div>
+  <div class="cell"><svg class="tile" width="96" height="96"><use href="#logo"/></svg>96</div>
+  <div class="cell"><svg class="tile" width="56" height="56"><use href="#logo"/></svg>56</div>
+  <div class="cell"><svg class="tile round" width="96" height="96"><use href="#logo"/></svg>圆形裁切</div>
+</div>
+
+<h2>App 内使用，没有底色</h2>
+<div class="row">
+  <div class="cell"><svg width="120" height="120"><use href="#mark"/></svg>启动画面</div>
+  <div class="cell"><svg width="52" height="52"><use href="#mark"/></svg>总览页头部</div>
+  <div class="cell"><div class="light"><svg width="72" height="72"><use href="#mark"/></svg></div>浅色背景</div>
+</div>
+
+<h2>单色版，用于通知栏和主题图标</h2>
+<div class="row">
+  <div class="cell"><div class="bar"><svg width="22" height="22" style="color:#fff"><use href="#mono"/></svg>续杯 · Claude Max 还有 3 天到期</div>通知栏</div>
+  <div class="cell"><svg width="64" height="64" style="color:#7ef0dd"><use href="#mono"/></svg>主题图标</div>
+  <div class="cell"><svg width="24" height="24" style="color:#fff"><use href="#mono"/></svg>24</div>
+</div>
+</body>
+</html>

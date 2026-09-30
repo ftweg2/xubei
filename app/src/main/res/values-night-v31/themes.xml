@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Android 12+, system dark mode: see values-v31/themes.xml. -->
+    <style name="Theme.Vluer" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/vluer_background</item>
+        <item name="android:windowSplashScreenBackground">@color/vluer_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_mark</item>
+    </style>
+</resources>

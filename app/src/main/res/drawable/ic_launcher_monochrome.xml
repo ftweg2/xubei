@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Themed launcher icon (Android 13+): mockup symbol "mono", scaled like the foreground. -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.6667"
+        android:scaleY="0.6667">
+        <path
+            android:pathData="M21.3729,70.2143A36,36 0,1 1,71.2329,86.6074"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="6"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M40.2,54Q47,49 54,54T67.8,54L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z" />
+    </group>
+</vector>

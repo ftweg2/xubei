@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!--
+      续杯 launcher mark (docs/mockups/logo-xubei.html, symbol "logo" without its background, which
+      is ic_launcher_background). Scaled to 2/3 around the center: the adaptive icon shows the
+      middle 72 of 108 units, so the tile looks like the mockup's 108 tile, and everything stays in
+      the 66 dp safe zone.
+    -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.6667"
+        android:scaleY="0.6667">
+        <path
+            android:pathData="M18,55A36,36 0,1 1,90,55A36,36 0,1 1,18,55Z"
+            android:strokeColor="#1AFFFFFF"
+            android:strokeWidth="5" />
+        <path
+            android:pathData="M21.3729,70.2143A36,36 0,1 1,71.2329,86.6074"
+            android:strokeWidth="5"
+            android:strokeLineCap="round">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="101.84"
+                    android:startY="72.41"
+                    android:endX="6.16"
+                    android:endY="37.59">
+                    <item android:offset="0" android:color="#FF7EF0DD" />
+                    <item android:offset="0.55" android:color="#FF60A5FA" />
+                    <item android:offset="1" android:color="#FFA78BFA" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="37"
+                    android:startY="0"
+                    android:endX="71"
+                    android:endY="0">
+                    <item android:offset="0" android:color="#57FFFFFF" />
+                    <item android:offset="0.5" android:color="#14FFFFFF" />
+                    <item android:offset="1" android:color="#38FFFFFF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <group>
+            <clip-path android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z" />
+            <path android:pathData="M28,52Q35,47.5 42,52T56,52T70,52T84,52V82H28Z">
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="0"
+                        android:startY="49.75"
+                        android:endX="0"
+                        android:endY="82">
+                        <item android:offset="0" android:color="#FF8AF5E2" />
+                        <item android:offset="1" android:color="#FF3F8CF0" />
+                    </gradient>
+                </aapt:attr>
+            </path>
+            <path
+                android:pathData="M28,52Q35,47.5 42,52T56,52T70,52T84,52"
+                android:strokeColor="#B3FFFFFF"
+                android:strokeWidth="1.2" />
+        </group>
+        <path
+            android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z"
+            android:strokeColor="#D9FFFFFF"
+            android:strokeWidth="2.2"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M42.5,38.5L45.3,66"
+            android:strokeColor="#BFFFFFFF"
+            android:strokeWidth="2.4"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

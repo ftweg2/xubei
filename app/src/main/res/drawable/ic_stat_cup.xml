@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="88"
+    android:viewportHeight="88">
+    <!--
+      Notification icon: mockup symbol "mono" in white on transparent. The 88-unit viewport crops
+      the empty margin of the 108 canvas so the mark fills the 24 dp icon.
+    -->
+    <group
+        android:translateX="-10"
+        android:translateY="-11">
+        <path
+            android:pathData="M21.3729,70.2143A36,36 0,1 1,71.2329,86.6074"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="6"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M37,33H71L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M40.2,54Q47,49 54,54T67.8,54L66.4,73.5Q65.8,78 61.4,78H46.6Q42.2,78 41.6,73.5Z" />
+    </group>
+</vector>

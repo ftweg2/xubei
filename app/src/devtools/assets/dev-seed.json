@@ -1,0 +1,226 @@
+{
+  "format": "vluer-subscriptions",
+  "version": 1,
+  "exported_at": "2026-09-29T00:00:00Z",
+  "subscriptions": [
+    {
+      "name": "Claude Max",
+      "category": "AI",
+      "price_minor": 10000,
+      "currency": "USD",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-02",
+      "auto_renew": true
+    },
+    {
+      "name": "ChatGPT Plus",
+      "category": "AI",
+      "price_minor": 2000,
+      "currency": "USD",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-08",
+      "auto_renew": true
+    },
+    {
+      "name": "Cursor Pro",
+      "category": "AI",
+      "price_minor": 2000,
+      "currency": "USD",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-23",
+      "auto_renew": true
+    },
+    {
+      "name": "Gemini Advanced",
+      "category": "AI",
+      "price_minor": 14000,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-17",
+      "auto_renew": false
+    },
+    {
+      "name": "Midjourney",
+      "category": "AI",
+      "price_minor": 9600,
+      "currency": "USD",
+      "cycle_unit": "MONTH",
+      "cycle_count": 12,
+      "next_due": "2027-02-16",
+      "auto_renew": false
+    },
+    {
+      "name": "东京 CN2 GIA",
+      "category": "VPS",
+      "price_minor": 4990,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-19",
+      "auto_renew": true,
+      "vps": {
+        "komari_uuid": "mock-0001-tokyo",
+        "komari_name": "东京 CN2 GIA",
+        "traffic_limit_bytes": 1099511627776,
+        "traffic_limit_type": "MAX",
+        "counting_mode": "KOMARI_CUMULATIVE",
+        "reset_day": 18,
+        "komari_region": "🇯🇵"
+      }
+    },
+    {
+      "name": "法兰克福 年付",
+      "category": "VPS",
+      "price_minor": 36000,
+      "currency": "EUR",
+      "cycle_unit": "MONTH",
+      "cycle_count": 12,
+      "next_due": "2027-03-02",
+      "auto_renew": false,
+      "vps": {
+        "komari_uuid": "mock-0002-fra",
+        "komari_name": "法兰克福 年付",
+        "traffic_limit_bytes": 0,
+        "traffic_limit_type": "MAX",
+        "counting_mode": "APP_ACCUMULATED",
+        "reset_day": 1,
+        "komari_region": "🇩🇪",
+        "agent_month_rotate": true
+      }
+    },
+    {
+      "name": "洛杉矶 9929",
+      "category": "VPS",
+      "price_minor": 12900,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 3,
+      "next_due": "2026-11-06",
+      "auto_renew": false,
+      "vps": {
+        "komari_uuid": "mock-0003-la",
+        "komari_name": "洛杉矶 9929",
+        "traffic_limit_bytes": 536870912000,
+        "traffic_limit_type": "SUM",
+        "counting_mode": "KOMARI_CUMULATIVE",
+        "reset_day": 1,
+        "komari_region": "🇺🇸"
+      }
+    },
+    {
+      "name": "香港 离线机",
+      "category": "VPS",
+      "price_minor": 2000,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-03",
+      "auto_renew": false,
+      "vps": {
+        "komari_uuid": "mock-0004-hk",
+        "komari_name": "香港 离线机",
+        "traffic_limit_bytes": 214748364800,
+        "traffic_limit_type": "MAX",
+        "counting_mode": "KOMARI_CUMULATIVE",
+        "reset_day": 1,
+        "komari_region": "🇭🇰"
+      }
+    },
+    {
+      "name": "甲骨文-eu-92",
+      "category": "VPS",
+      "price_minor": 0,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": null,
+      "auto_renew": false,
+      "cycle_known": false,
+      "vps": {
+        "komari_uuid": "mock-0005-oracle",
+        "komari_name": "甲骨文-eu-92",
+        "traffic_limit_bytes": 0,
+        "traffic_limit_type": "MAX",
+        "counting_mode": "KOMARI_CUMULATIVE",
+        "reset_day": 1,
+        "komari_region": "🇩🇪"
+      }
+    },
+    {
+      "name": "新加坡 终身机",
+      "category": "VPS",
+      "price_minor": 0,
+      "currency": "USD",
+      "cycle_unit": "ONCE",
+      "cycle_count": 1,
+      "next_due": null,
+      "auto_renew": false,
+      "is_free": true,
+      "is_permanent": true,
+      "vps": {
+        "komari_uuid": "mock-0006-sg",
+        "komari_name": "新加坡 终身机",
+        "traffic_limit_bytes": 2199023255552,
+        "traffic_limit_type": "SUM",
+        "counting_mode": "KOMARI_CUMULATIVE",
+        "reset_day": 1,
+        "komari_region": "🇸🇬"
+      }
+    },
+    {
+      "name": "搬瓦工 DC6",
+      "category": "VPS",
+      "price_minor": 4999,
+      "currency": "USD",
+      "cycle_unit": "MONTH",
+      "cycle_count": 12,
+      "next_due": "2026-09-27",
+      "auto_renew": false
+    },
+    {
+      "name": "iCloud+ 200GB",
+      "category": "OTHER",
+      "price_minor": 2100,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-09-29",
+      "auto_renew": true
+    },
+    {
+      "name": "Spotify",
+      "category": "OTHER",
+      "price_minor": 1500,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-11",
+      "auto_renew": true
+    },
+    {
+      "name": "Netflix",
+      "category": "OTHER",
+      "price_minor": 6800,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 1,
+      "next_due": "2026-10-29",
+      "auto_renew": true
+    },
+    {
+      "name": "域名 xubei.app",
+      "category": "OTHER",
+      "price_minor": 9800,
+      "currency": "CNY",
+      "cycle_unit": "MONTH",
+      "cycle_count": 12,
+      "next_due": "2027-04-27",
+      "auto_renew": false,
+      "archived": true
+    }
+  ]
+}

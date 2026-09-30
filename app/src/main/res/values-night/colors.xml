@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background before Compose draws: the dark background's base color (mockup .phone). -->
+    <color name="vluer_background">#FF070B11</color>
+    <!-- Accent of notifications (brand teal). -->
+    <color name="notification_accent">#FF2DD4BF</color>
+</resources>

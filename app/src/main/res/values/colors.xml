@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background before Compose draws: the light background's base color. -->
+    <color name="vluer_background">#FFE9EFF5</color>
+    <!-- Accent of notifications (brand teal). -->
+    <color name="notification_accent">#FF0F766E</color>
+    <!-- Splash colors by the app's theme setting (not by the system's): see MainActivity. -->
+    <color name="splash_background_dark">#FF070B11</color>
+    <color name="splash_background_light">#FFE9EFF5</color>
+</resources>

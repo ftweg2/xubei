@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Launch window before Android 12: the background color with the first frame of the 续杯 splash
+  (the empty cup in its base ring) in the middle, drawn in the same 288 dp box as the Android 12+
+  splash icon, so the app's splash animation (ui/SplashOverlay.kt) starts from the same picture.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/vluer_background" />
+    <item
+        android:width="288dp"
+        android:height="288dp"
+        android:drawable="@drawable/splash_mark"
+        android:gravity="center" />
+</layer-list>
