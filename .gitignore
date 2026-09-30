@@ -17,9 +17,10 @@ local.properties
 # Local only: never pushed
 # backups/ holds old source archives and a copy of real app data from the phone
 /backups/
-# built APKs (attach them to a GitHub release instead)
-/release/
+# built APKs: only the published one is tracked
+/release/*
 *.apk
+!/release/xubei-1.0.apk
 # 500+ MB of test screenshots, some taken against the real Komari panel
 /docs/screenshots/
 /.claude/
@@ -27,3 +28,6 @@ local.properties
 .kotlin/
 *.jks
 *.keystore
+
+# Release signing key and its password
+/signing/

@@ -14,8 +14,17 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.2-7f52ff?logo=kotlin&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285f4?logo=jetpackcompose&logoColor=white)
 ![纯本地](https://img.shields.io/badge/纯本地-没有账号%20·%20没有服务器-2dd4bf)
+![MIT](https://img.shields.io/badge/许可证-MIT-a78bfa)
+
+**[下载安装包](https://github.com/ftweg2/xubei/raw/main/release/xubei-1.0.apk)**
 
 </div>
+
+![总览、订阅列表、VPS 详情、统计四个页面](docs/images/screens-1.webp)
+
+![新增订阅、选择图标、导入节点、浅色主题](docs/images/screens-2.webp)
+
+<div align="center"><sub>截图里都是演示数据</sub></div>
 
 ## 为什么做这个
 
@@ -60,7 +69,9 @@
 
 ## 安装
 
-目前没有发布安装包，需要自己构建，见下面的[构建](#构建)。最低 Android 8.0（API 26）。Android 13 及以上有完整的玻璃效果，更低的版本会自动降级，见[玻璃效果和系统版本](#玻璃效果和系统版本)。
+下载 [xubei-1.0.apk](https://github.com/ftweg2/xubei/raw/main/release/xubei-1.0.apk)（约 2.9 MB），在手机上打开安装。第一次安装时系统会问是否允许安装未知来源的应用，允许即可。也可以自己构建，见下面的[构建](#构建)。
+
+最低 Android 8.0（API 26）。Android 13 及以上有完整的玻璃效果，更低的版本会自动降级，见[玻璃效果和系统版本](#玻璃效果和系统版本)。
 
 界面只有中文。
 
@@ -151,8 +162,16 @@
 
 装到手机上用的必须是正式包。调试包的代码全部解释执行，在真机上会明显卡顿，只用于开发。
 
-- `release`：不可调试，开启 R8 和资源压缩。用这台电脑的调试密钥（`~/.android/debug.keystore`）签名，这样才能覆盖安装之前的版本。以后的更新必须用同一个密钥签名，否则只能卸载重装，数据会丢。
+- `release`：不可调试，开启 R8 和资源压缩。签名见下面的“签名”。
 - `perf`：和 `release` 完全一样，只是包名多了 `.perf` 后缀，并带上 `src/devtools` 里的开发钩子（固定时钟和数据）。可以和正式版同时装在一台设备上，用于测量和截图对比。
+
+### 签名
+
+Android 只允许用同一个密钥签名的安装包覆盖安装。密钥不同就只能卸载重装，数据会丢。
+
+- 仓库里发布的安装包用作者的正式密钥签名。密钥和密码放在 `signing/` 目录（`xubei-release.jks` 和 `keystore.properties`），这个目录不进版本库。
+- 没有 `signing/keystore.properties` 时，`release` 构建会改用本机的调试密钥（`~/.android/debug.keystore`）签名。所以克隆仓库后可以直接构建，但你构建出来的包不能覆盖安装仓库里发布的包，反过来也一样。
+- 想用自己的密钥：建一个 `signing/keystore.properties`，写上 `storeFile`（相对 `signing/` 的文件名）、`storePassword`、`keyAlias`、`keyPassword` 四项。
 
 技术栈：Kotlin、Jetpack Compose + Material 3、Navigation Compose、Room（KSP）、DataStore、WorkManager、OkHttp + kotlinx.serialization。依赖注入是手写的 `AppContainer`。
 
@@ -293,3 +312,7 @@ adb exec-out run-as com.ftwegc.myapplication cat databases/vluer-incompatible-20
 - 只支持一个 Komari 面板；不做汇率换算、云同步、桌面小组件、英文界面。
 - 面板在 Cloudflare 质询或登录页后面时会返回 HTML，App 会提示“地址可能不是 Komari 面板”。
 - 开发期间的测试版改过表结构而没有提升版本号。装过这种测试版的设备覆盖安装后，旧数据读不出来，会另存为备份并从空白开始（见下面“数据库和升级”），不会闪退；备份里的数据 App 不会自动恢复。
+
+## 许可证
+
+代码以 [MIT 许可证](LICENSE) 发布。第三方代码和图标各有自己的许可证，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。各品牌的名称和标志归各自的公司所有。

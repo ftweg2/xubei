@@ -1,8 +1,17 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+}
+
+// The release key lives outside version control in signing/ (see README, "签名"). A checkout
+// without it still builds: the release build is then signed with the local debug key.
+val releaseSigning = Properties().apply {
+    val file = rootProject.file("signing/keystore.properties")
+    if (file.exists()) file.inputStream().use { load(it) }
 }
 
 android {
@@ -22,14 +31,21 @@ android {
     }
 
     signingConfigs {
-        // The app is installed over earlier builds signed with this computer's debug key, so the
-        // release build uses the same key (Android only installs an update signed like the
-        // installed app). The debug keystore's passwords are the public SDK defaults.
         create("localRelease") {
-            storeFile = file(System.getProperty("user.home") + "/.android/debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
+            enableV2Signing = true
+            enableV3Signing = true
+            if (releaseSigning.containsKey("storeFile")) {
+                storeFile = rootProject.file("signing/" + releaseSigning.getProperty("storeFile"))
+                storePassword = releaseSigning.getProperty("storePassword")
+                keyAlias = releaseSigning.getProperty("keyAlias")
+                keyPassword = releaseSigning.getProperty("keyPassword")
+            } else {
+                // The debug keystore's passwords are the public SDK defaults.
+                storeFile = file(System.getProperty("user.home") + "/.android/debug.keystore")
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
         }
     }
 
