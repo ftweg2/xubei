@@ -16,7 +16,7 @@
 ![纯本地](https://img.shields.io/badge/纯本地-没有账号%20·%20没有服务器-2dd4bf)
 ![MIT](https://img.shields.io/badge/许可证-MIT-a78bfa)
 
-**[下载安装包](https://github.com/ftweg2/xubei/raw/main/release/xubei-1.0.apk)**
+**[下载安装包](https://github.com/ftweg2/xubei/releases/latest)**
 
 </div>
 
@@ -69,7 +69,7 @@
 
 ## 安装
 
-下载 [xubei-1.0.apk](https://github.com/ftweg2/xubei/raw/main/release/xubei-1.0.apk)（约 2.9 MB），在手机上打开安装。第一次安装时系统会问是否允许安装未知来源的应用，允许即可。也可以自己构建，见下面的[构建](#构建)。
+到 [Releases](https://github.com/ftweg2/xubei/releases/latest) 页面下载最新的安装包（约 2.9 MB），在手机上打开安装。第一次安装时系统会问是否允许安装未知来源的应用，允许即可。也可以自己构建，见下面的[构建](#构建)。
 
 最低 Android 8.0（API 26）。Android 13 及以上有完整的玻璃效果，更低的版本会自动降级，见[玻璃效果和系统版本](#玻璃效果和系统版本)。
 

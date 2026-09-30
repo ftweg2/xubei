@@ -21,6 +21,7 @@ local.properties
 /release/*
 *.apk
 !/release/xubei-1.0.apk
+!/release/xubei-1.0.md
 # 500+ MB of test screenshots, some taken against the real Komari panel
 /docs/screenshots/
 /.claude/

@@ -1,0 +1,42 @@
+name: Release
+
+# Publishes every release/xubei-<version>.apk in the repository as the GitHub release
+# v<version>, with release/xubei-<version>.md as its notes. Versions that are already
+# published are left alone. The APK is built and signed locally (the signing key is not in
+# the repository), so this only uploads it.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/**'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish new versions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          for apk in release/xubei-*.apk; do
+            version="${apk#release/xubei-}"
+            version="${version%.apk}"
+            tag="v$version"
+            if gh release view "$tag" >/dev/null 2>&1; then
+              echo "$tag is already published"
+              continue
+            fi
+            notes="release/xubei-$version.md"
+            if [ -f "$notes" ]; then
+              gh release create "$tag" "$apk" --title "续杯 $version" --notes-file "$notes" --target "$GITHUB_SHA"
+            else
+              gh release create "$tag" "$apk" --title "续杯 $version" --generate-notes --target "$GITHUB_SHA"
+            fi
+          done
